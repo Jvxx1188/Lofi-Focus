@@ -8,10 +8,10 @@ interface ClockProps{
     position : string
 }
 
-export default function Clock(props : ClockProps){
+export default function Clock(props : ClockProps){  
+//get element by id,and add yellow prop
 
+//aqui é o relogio, não a case
 console.log(props)
-    //vou terque enviar minha data para cá para ela vir e ser atualizada
-    //vou terque criar uma string certinha com todos os parametros
-    return <h1></h1>
+   return <h1 className={ " w-full "+ props.size+" " + props.color + props.position}>12:00</h1>
 }

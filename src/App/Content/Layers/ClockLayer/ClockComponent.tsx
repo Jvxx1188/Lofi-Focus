@@ -8,11 +8,12 @@ export default function ClockComponent(){
     useEffect(()=>{
         console.log()
         clockcontroller.ClockRender = ReactDOM.createRoot(document.getElementById(id)!)
-        clockcontroller.UpdateClock("red","Arial","50px","center");
+        clockcontroller.UpdateClock();
     },[])
     
-    return <div id={id} className="w-screen h-screen absolute top-0 left-0 flex ">
+    return <div id={id} className="w-screen h-screen absolute top-0 left-0 flex overflow-hidden p-20 select-none ">
  {/*essa layer aqui é uma caixa para render*/}
  {/*o import acima é o controller dessa layer*/}
+
      </div>
 }

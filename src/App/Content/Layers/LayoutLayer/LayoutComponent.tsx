@@ -14,7 +14,7 @@ function LayoutComponent(){
     return (
         //aqui é a caixa e aqui é a posição inicial do layout
         <div className="absolute top-0 
-        left-0 w-screen h-screen text-white flex justify-end align-top p-9 select-none">
+        left-0 w-screen h-screen text-white flex justify-end align-top px-9 py-1 select-none">
         {/*aqui é a posição inicial do layout*/}
 
             <div>
