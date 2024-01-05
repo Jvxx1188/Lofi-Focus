@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+  
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -90,3 +91,73 @@ background-size: cover;
 .nav-icon-container-start:active{
   background-color: rgba(255, 255, 255, 0.5);
  }
+
+.green {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
+}
+
+/*corrigindo erro bobo, tailwind não cria variavel apos render entao eu próprio estou criando ela*/
+.black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.red {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+ .purple {
+  --tw-text-opacity: 1;
+  color: rgb(126 34 206 / var(--tw-text-opacity));
+}
+
+.cyan {
+  --tw-text-opacity: 1;
+  color: rgb(34 211 238 / var(--tw-text-opacity));
+}
+
+.gray {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.blue {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.yellow {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+/*Fonts*/
+
+/*Rubik Scribble 400
+Rubik Doodle Triangles 400
+Oswald 200 400 700*/
+
+.font-rubik{
+  font-family: 'Rubik Lines', sans-serif;
+  
+}
+.font-rubikscribble{
+  font-family: 'Rubik Scribble', sans-serif;
+  
+}
+.font-rubikdoodle{
+  font-family: 'Rubik Doodle Triangles', sans-serif;
+  
+}
+.font-oswald-300{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+.font-oswald-700{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}

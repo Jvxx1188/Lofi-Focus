@@ -1,8 +1,6 @@
     //parei no problema que a tipagem de quando eu envio os icones para dentro do state ele da erro dizendo que não consegue atribuir htmlelement | null a never,
     import React,{Dispatch} from "react";
-    import { Clock4,Music2 ,WallpaperIcon,   LucideIcon } from "lucide-react"
-    import clockcontroller from "../../../Cases & Controlers/Clock/Controler/ClockController";
-  //as chamadas estao dentro de layout manager, 
+    import { Clock4,Music2 ,WallpaperIcon,   LucideIcon } from "lucide-react"//as chamadas estao dentro de layout manager, 
 
     //pegar o evento listener e saber quando ele foi clicado, e assim chamar a função que rencia ele
 
@@ -49,7 +47,6 @@ export function IconBase(Id : string,Icon : LucideIcon){
                               const value = state === icon.id ? "none" : icon.id;
                               //retorna true e false
                               //vamos adivinhar o valor da state
-clockcontroller.UpdateClock("text-red-500","Arial","50px","center");
                               setstate(value); 
                               state = value;
                             })

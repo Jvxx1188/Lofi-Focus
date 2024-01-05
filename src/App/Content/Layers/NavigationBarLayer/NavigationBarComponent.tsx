@@ -1,6 +1,6 @@
 import React from "react";
 import * as Icon from "./Icons/IconsComponent"
-
+//aqui eu importo o meu musiccontroller
 
 function NavigationBarLayout(){
     

@@ -6,7 +6,7 @@ interface ClockProps{
 }
 export function Clockorientation(value :ClockProps){
     //se eu fazer desse jeito vai dar muito trabalho, eu vou fazer um controller do case layout
-   const classname = " clock-case flex w-24 h-15 aspect-video bg-white col-span-2 p-1  hover:outline-2 outline-red-500 hover:outline-double hover:cursor-pointer   active:bg-gray-800 active:duration-0 transition duration-300"
+   const classname = " clock-case flex w-24 h-15 aspect-video bg-white rounded-lg col-span-2 p-1  hover:outline-2 outline-yellow-500 hover:bg-yellow-600 hover:text-white hover:outline-double hover:cursor-pointer   active:bg-yellow-900 active:duration-0 transition duration-300"
     if(value.value == "left"){
         return  <div id="clock-case-left" onClick={()=>{clockcontroller.Set.position(" self-end ")}} className={"items-end" + classname}>
                <p>12:00</p>

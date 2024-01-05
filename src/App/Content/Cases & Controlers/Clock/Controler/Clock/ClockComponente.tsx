@@ -6,6 +6,7 @@ interface ClockProps{
     font : string
     size : string
     position : string
+    weight : string
 }
 
 export default function Clock(props : ClockProps){  
@@ -13,5 +14,5 @@ export default function Clock(props : ClockProps){
 
 //aqui é o relogio, não a case
 console.log(props)
-   return <h1 className={ " w-full "+ props.size+" " + props.color + props.position}>12:00</h1>
+   return <h1 className={" w-full "+props.color+ props.size + props.position + props.font}>12:00</h1>
 }

@@ -8,27 +8,38 @@ class ClockController{
     private font;
     private size;
     private position;
+    private weight;
    constructor(){
     this.localtime = new Date()
-    this.color = "text-white"
-    this.font = "Arial"
-    this.size = "text-6xl"
-    this.position = "center"
+    this.color = " white "
+    this.font = " font-sans "
+    this.size = " text-6xl "
+    this.position = " text-end self-end "
+    this.weight = " font-semibold "
    }
    
    public Set = {
-       color : (value : string,intensity : number) =>{
-        this.color = "text-"+ value+"-" +intensity+ "00"
-        console.log(this.color)
+       color : (value : string) =>{
+        this.color = " "+ value+" ";
         this.UpdateClock()
+        console.log(this.color)
        },
-       font : (value : string) => this.font = value &&  this.UpdateClock(),
+       font : (value : string) => {
+        this.font = value 
+        this.UpdateClock()
+       }
+       ,
        size : (value : string) =>{
         this.size = value
         this.UpdateClock()
        } ,
        position : (value : string) => {
         this.position = value 
+          this.UpdateClock()
+          
+       } ,
+       weight : (value : string) => {
+        this.weight = value 
           this.UpdateClock()
           
        } 
@@ -49,7 +60,7 @@ class ClockController{
    //o horario eu pego dali de cima
     console.log("renderizado")
   this.ClockRender.render(
-       <Clock time={this.localtime} color={this.color} font={this.font} size={this.size} position={this.position}/>
+       <Clock time={this.localtime} color={this.color} font={this.font} size={this.size} position={this.position} weight={this.weight}/>
 
     //la no meu layout eu vou ter um padrao certinho pra mandar nomes que são reconhecidos na div
 

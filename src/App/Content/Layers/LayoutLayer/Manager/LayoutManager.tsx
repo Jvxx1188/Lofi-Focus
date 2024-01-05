@@ -1,7 +1,7 @@
 import React from "react";
 import BGLayoutComponent from "../../../Cases & Controlers/BG/CaseLayout/BGCaseLayoutComponent";
 import ClockCaseLayout from "../../../Cases & Controlers/Clock/CaseLayout/ClockCaseLayoutComponent";
-
+import MusicCaseLayout from "../../../Cases & Controlers/Music/CaseLayout/MusicCaseLayoutComponent";
     
 
 
@@ -16,7 +16,7 @@ import ClockCaseLayout from "../../../Cases & Controlers/Clock/CaseLayout/ClockC
             return <ClockCaseLayout/>
             break;
         case "icon-music":
-            return <h1>b</h1>
+            return <MusicCaseLayout/>
             break;
         case "icon-bg":
             return <BGLayoutComponent/>
