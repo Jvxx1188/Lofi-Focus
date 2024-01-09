@@ -57,8 +57,8 @@ class ClockController{
 
 
    public UpdateClock =() =>{
+    
    //o horario eu pego dali de cima
-    console.log("renderizado")
   this.ClockRender.render(
        <Clock time={this.localtime} color={this.color} font={this.font} size={this.size} position={this.position} weight={this.weight}/>
 

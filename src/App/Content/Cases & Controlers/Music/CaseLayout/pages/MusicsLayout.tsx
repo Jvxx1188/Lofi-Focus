@@ -1,7 +1,7 @@
 import React from "react"
-
-export default function MusicsLayout(props : { callback : (id : number) => void}){
+export default function MusicsLayout(){
     return <div>
-        <button onClick={() => props.callback(1)}>Musics</button>
+        <button></button>
+        <h1>aaa</h1>
     </div>
 }

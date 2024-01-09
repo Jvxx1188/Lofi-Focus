@@ -1,7 +1,7 @@
 import React from "react";
 import * as Icon from "./Icons/IconsComponent"
-//aqui eu importo o meu musiccontroller
-
+import { musiccontroller } from "../../Cases & Controlers/Music/Controler/MusicControler";//aqui eu importo o meu musiccontroller
+musiccontroller.Set.RandomMix()
 function NavigationBarLayout(){
     
     return (

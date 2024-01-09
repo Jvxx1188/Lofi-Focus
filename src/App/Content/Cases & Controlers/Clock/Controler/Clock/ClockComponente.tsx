@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 interface ClockProps{
     time : DateConstructor
@@ -10,9 +10,15 @@ interface ClockProps{
 }
 
 export default function Clock(props : ClockProps){  
-//get element by id,and add yellow prop
-
+const [time, setTime] = React.useState(new Date())
+useEffect(() => {
+    const interval = setInterval(() => {
+        setTime(new Date())
+    }, 5000)
+    return () => clearInterval(interval)
+}, [])
+    //get element by id,and add yellow prop
 //aqui é o relogio, não a case
-console.log(props)
-   return <h1 className={" w-full "+props.color+ props.size + props.position + props.font}>12:00</h1>
+
+   return <h1 className={" w-full "+props.color+ props.size + props.position + props.font}>{time.getHours() + ":" +time.getMinutes()}</h1>
 }

@@ -74,6 +74,7 @@
   body {
     background: url(https://i.redd.it/injl33v9myl51.jpg);
 background-size: cover;
+background-position: center;
   }
 
 }
