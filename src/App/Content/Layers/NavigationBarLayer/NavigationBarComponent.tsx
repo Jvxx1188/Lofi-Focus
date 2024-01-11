@@ -1,23 +1,21 @@
 import React from "react";
 import * as Icon from "./Icons/IconsComponent"
-import { musiccontroller } from "../../Cases & Controlers/Music/Controler/MusicControler";//aqui eu importo o meu musiccontroller
-musiccontroller.Set.RandomMix()
+
 function NavigationBarLayout(){
-    
     return (
+        
         <div id="nav-layer" className="w-screen
          h-screen flex justify-end items-end">
-
         <nav id="nav-layout" className="w-72 h-10 rounded-full px-4 py-1 
         bg-transparent m-8 flex items-center justify-between border-2 border-yellow-600 
-     border-opacity-80 backdrop-blur-sm">
+        border-opacity-80 backdrop-blur-sm">
          
-         <p className="text-white select-none">
+          <p className="text-white select-none">
             nada tocando
          </p>
         <div id="nav-layout-icons" className="flex flex-row items-center gap-2 ">
         
-
+       
         {Icon.Clock}
         {Icon.Music}
         {Icon.Bg}

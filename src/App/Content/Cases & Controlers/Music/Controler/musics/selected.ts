@@ -4,17 +4,28 @@ export const cartegories = [
     [
         {name : "lofigirl",
         url : "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-        type : "video"},
+        type : "video",authorname : "lofigirl"},
 
         {name : "C018",
         url : "https://www.youtube.com/watch?v=aBkTkxKDduc",
-        type : "video"}]
+        type : "video",authorname : "c018"},
+        {name : "UAU",
+        url : "https://www.youtube.com/watch?v=XLNVBWudrIo",
+        type : "video",authorname : "c018"}]
+        
 ,
     //calm
 [
             {name : "relax lofi",
             url : "https://www.youtube.com/watch?v=ehTuatSx5Wc",
-            type : "video"}
+            type : "video",authorname : "relax lofi"},
+            {name : "Weightless",
+            url : "https://www.youtube.com/watch?v=mhjgfd8CRpQ",
+            type : "video",authorname : "Marconi Union"}
+],
+//others
+[
+    
 ]
 ]
   
