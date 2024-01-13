@@ -23,5 +23,5 @@ useEffect(() => {
     //get element by id,and add yellow prop
 //aqui é o relogio, não a case
 
-   return <h1 className={" w-full "+props.color+ props.size + props.position + props.font }>{time}</h1>
+   return <h1 className={"font w-full "+props.color+ props.size + props.position + props.font }>{time}</h1>
 }

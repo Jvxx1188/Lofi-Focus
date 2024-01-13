@@ -1,10 +1,23 @@
 import Mix from "./pages/Mix"
-import React from "react"
-import {ScrollArea} from "../../../../../components/ui/scroll-area"
+import MusicsLayout from "./pages/MusicsLayout"
+import React, { useCallback } from "react"
 export default function MusicCaseLayout(){
-      
-        return  <Mix/>
+    const [casevalue,SetCase] = React.useState(0)
 
+const ChangeValue ={
+   change : useCallback((value)=>{
+        SetCase(value)
+    },[casevalue])
+    
+} 
+    switch (casevalue){
+        case 0:
+        return  MusicsLayout(ChangeValue)
+        break;
+        case 1:
+            return Mix(ChangeValue) 
+            break;
+    }
 }
 
     //de qualquer forma a função teria que fazer um push em cada um para pegar as variaveis 

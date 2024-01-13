@@ -3,7 +3,7 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 import {cartegories} from "./musics/selected.ts"
-import {MixTracksBox,ButtonBox} from "../CaseLayout/pages/Mix.tsx"
+import {MixTracksBox,ButtonBox,Avisos} from "../CaseLayout/pages/Mix.tsx"
 import Mix from "../CaseLayout/MusicCaseLayoutComponent.tsx"
 export interface VideoObject{
     name : string,
@@ -32,7 +32,7 @@ class MusicController{
         this.Youtube = new YT.Player('music-layer',{
             height: '0',
             width: '0',
-            videoId: 'jfKfPfyJRdk',
+            videoId: '6I2pyW6dmsE',
          playerVars : {
             autoplay : 0,
          }
@@ -45,6 +45,11 @@ class MusicController{
           if(change.data == YT.PlayerState.PLAYING) {
             this.isplaying = true
             this.Mix.UpdateMixVariables()
+            this.Mix.GetAndUpdateComponent("mix-avisos",Avisos);
+          }
+          if(change.data == YT.PlayerState.BUFFERING){
+            this.Mix.UpdateMixVariables()
+            this.Mix.GetAndUpdateComponent("mix-avisos",Avisos);
           }
           if(change.data == YT.PlayerState.PAUSED) {
             this.isplaying = false
@@ -67,6 +72,37 @@ PlayOrPauseMusic = () =>{
 VideoEnded = () =>{
     
 }
+
+    extractYouTubeVideoId =(url : string)=> {
+    let videoId = "";
+  
+    if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1];
+      } 
+      // Verifica os formatos youtube.com
+      else if (url.includes('youtube.com/watch?v=')) {
+        videoId = url.split('youtube.com/watch?v=')[1];
+      } else if (url.includes('youtube.com/v/')) {
+        videoId = url.split('youtube.com/v/')[1];
+      } 
+      // Verifica o formato youtube.com com parâmetros adicionais
+      else if (url.includes('youtube.com/') && url.includes('?v=')) {
+        videoId = url.split('youtube.com/')[1].split('?v=')[1];
+      }
+      // Verifica o formato youtu.be com parâmetros adicionais
+     
+    
+      // Limita o ID do vídeo a 11 caracteres
+      if (videoId && videoId.length > 11) {
+        videoId = videoId.substring(0, 11);
+      }
+      console.log(videoId)
+      return videoId;
+    }
+
+ 
+  
+
 //função que automaticamente vai pegar todas as cartegorias
         public Set ={
             GlobalRandomMix : () =>{
@@ -96,11 +132,30 @@ VideoEnded = () =>{
             this.mixtape.push(musicas[Math.floor(Math.random() * musicas.length)] as VideoObject)
             
         }
+        },
+
+        Volume : (vol : number)=>{
+this.Youtube.setVolume(vol)
         }
+
     } 
+    Get = {
+        VideoDuration : () =>{
+            const duration = this.Youtube.getDuration()
+            const minutes = Math.floor(duration / 60)
+            const seconds = Math.round(duration % 60)
+
+            if(Number.isNaN(minutes)){
+return "0:00"
+            }
+            if(seconds < 10){
+                return `${minutes}:0${seconds}`
+            }
+            return `${minutes}:${seconds}`
+        }
+    }
         Mix = {
              GetAndUpdateComponent : (id : string,Element) =>{
-
                 const component = document.getElementById(id);
                 if(!component){
                     return console.log("nao achou " + id);
@@ -119,25 +174,25 @@ VideoEnded = () =>{
                 
 
             },
-            ChangeMusic : (musicobj : VideoObject) =>{
+            ChangeMusic :async (musicobj : VideoObject) =>{
                 if(this.trackid <0) this.trackid = 0
-                console.log("trocando musica")
+                console.log(this.trackid)
                 if (!this.Youtube) {
                     console.log("youtube nao gerado, criando-o")
                     this.CreateYoutube()
                     return;
                 }
-                {
+                
                     //quando eu executo pelo nav o load
                     //mas quando pelo next funciona o load
-                    console.log(musicobj)
-                    const getid = musicobj.url.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\\s]{11})/);
                     
-                   if(!getid) return console.log("error id não encontrado")
-                   this.Youtube.loadVideoById(getid[1] as string)
-                    //renderiza denovo o layoutclock (enviando o mix)
+                    
+
+                      
+                    this.Youtube.loadVideoById(this.extractYouTubeVideoId(musicobj.url))
+                   //renderiza denovo o layoutclock (enviando o mix)
                     //renderiza denovo o nome no nav
-                }
+                
                 
                 console.log("done")
                this.Mix.UpdateMixVariables()

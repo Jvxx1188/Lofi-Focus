@@ -7,7 +7,7 @@ function NavigationBarLayout(){
         <div id="nav-layer" className="w-screen
          h-screen flex justify-end items-end">
         <nav id="nav-layout" className="w-72 h-10 rounded-full px-4 py-1 
-        bg-transparent m-8 flex items-center justify-between border-2 border-yellow-600 
+        bg-[#00000023] m-8 flex items-center justify-between border-2 border-yellow-600 
         border-opacity-80 backdrop-blur-sm">
          
           <p className="text-white select-none">

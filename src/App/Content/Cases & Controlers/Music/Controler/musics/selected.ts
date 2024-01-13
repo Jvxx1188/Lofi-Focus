@@ -23,8 +23,30 @@ export const cartegories = [
             url : "https://www.youtube.com/watch?v=mhjgfd8CRpQ",
             type : "video",authorname : "Marconi Union"}
 ],
-//others
+//vibes
 [
+    
+    {name : "Aesthetic",
+    url : "https://www.youtube.com/watch?v=qELmC7r0RKg",
+    type : "video",authorname : "Tollam Kim"},
+    {name : "Kylie Vibes",
+    url : "https://www.youtube.com/watch?v=7ru0pMwmuWY",
+    type : "video",authorname : "Tollam Kim"},
+    {name : "Sweet Sunset",
+    url : "https://www.youtube.com/watch?v=7XdhxXSzPHU",
+    type : "video",authorname : "Tollan Kim & dulai"},
+    {name : "Clouds",
+    url : "https://www.youtube.com/watch?v=TFeazBaTYVc",
+    type : "video",authorname : "Tollam Kim"},
+    {name : "Kylie Vibes",
+    url : "https://www.youtube.com/watch?v=7XdhxXSzPHU",
+    type : "video",authorname : "Tollam Kim"},
+    {name : "Hurt - New Jeans (Lofi Remix)",
+    url : "https://www.youtube.com/watch?v=6I2pyW6dmsE",
+    type : "video",authorname : "Tollam Kim"},
+    {name : "Super Shy - New Jeans (Lofi Remix)",
+    url : "https://www.youtube.com/watch?v=gRmxPMQzPKc",
+    type : "video",authorname : "Tollam Kim"}
     
 ]
 ]

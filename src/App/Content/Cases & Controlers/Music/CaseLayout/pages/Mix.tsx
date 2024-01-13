@@ -1,28 +1,36 @@
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 import { VideoObject, musiccontroller } from "../../Controler/MusicControler"
-import {Button} from "../../../../../../components/ui/button"
-import { Play,Pause,MoveUp,MoveDown,SkipForward,SkipBack, LucideIcon, ChevronUp, ChevronDown } from "lucide-react"
-import {ScrollArea} from "../../../../../../components/ui/scroll-area"
+import {Slider} from "../../../../../../components/ui/slider"
+import { Play,Pause,SkipForward,SkipBack, LucideIcon, ChevronUp, ChevronDown } from "lucide-react"
 import {Separator} from "../../../../../../components/ui/separator"
-export default function Mix(){
-    
+export default function Mix(Case){
     if(!musiccontroller.Youtube || musiccontroller.hastarted == 0){
 return <h1 id="loading-mix">Carregando</h1>
         }
 
-  return  <div className="w-96 h-[80%] bg-yellow-600 flex flex-col rounded-3xl overflow-hidden">
+  return  <div className="w-96 max-h-96 bg-yellow-600 flex flex-col rounded-3xl overflow-hidden">
        
-       <ButtonBox/>
-       <ScrollArea>
-        <div className="p-1 py-3">
-       <MixTracksBox/>
-        </div>
-       </ScrollArea>
+       <div  id="button-box"><ButtonBox/></div>
+       
+        <div className="overflow-y-scroll">
+        <div  id="tracks"><MixTracksBox/></div>
+       </div>
+       
+       <div onClick={()=>{Case.change(0)}} className="w-10 h-10 bg-black"/>
+       <div id="mix-avisos">
+        <Avisos/>
+       </div>
 </div>
+}
+export function Avisos(){
+        if(musiccontroller.Youtube.getPlayerState() === YT.PlayerState.BUFFERING){
+            return <h1 className="mix-avisos-bg text-center">Player esta carregando</h1>
+        }
+
 }
 
 export function MixTracksBox(){
-    return <div id="tracks" className="w-full flex-1 flex flex-col ">
+    return <div className="w-full flex-1 flex flex-col px-2">
     {
         musiccontroller.mixtape.map((music,i) => {
             return trackdiv(music,i)
@@ -45,11 +53,11 @@ function trackdiv(music : VideoObject,i : number){
     </div>
     <div className='w-4 flex flex-col gap-[1px] rounded-full bg-white bg-opacity-10 border-[0.1px] ' id='track-roll'>
   
-  <div id='mix-roll-up' className=' h-3 flex items-center justify-center rounded-t-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
+  <div onClick={() =>ChangeMusicIndex(1,musiccontroller.mixtape[i],i)} id='mix-roll-up' className=' h-3 flex items-center justify-center rounded-t-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
   <ChevronUp size={15}/>
   </div>
   <Separator/>
-  <div id='mix-roll-down' className=' h-3 flex items-center justify-center rounded-b-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
+  <div onClick={() =>ChangeMusicIndex(2,musiccontroller.mixtape[i],i)} id='mix-roll-down' className=' h-3 flex items-center justify-center rounded-b-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
   <ChevronDown size={15}/>
   </div>
     </div>
@@ -60,17 +68,70 @@ function trackdiv(music : VideoObject,i : number){
     
    </div> */
 }
+function ChangeMusicIndex(value  : 1 | 2,music : VideoObject,i : number){
+    if(value ==1){
+if(i == 0){
+    return;
+}
+        if(i == musiccontroller.trackid){
+            musiccontroller.trackid--;
+        }else if(i == musiccontroller.trackid+1){
+            musiccontroller.trackid++;
 
+        }
+        musiccontroller.mixtape.splice(i, 1);
+        musiccontroller.mixtape.splice(i-1, 0, music);
+       
+
+       
+    }else if(value ==2){
+        if(i > musiccontroller.mixtape.length-1){
+            return;
+        }
+        if(i == musiccontroller.trackid){
+            musiccontroller.trackid++;
+        }else if(i == musiccontroller.trackid-1){
+            musiccontroller.trackid--;
+
+        console.log("TA ACIMA")
+        }
+        musiccontroller.mixtape.splice(i, 1);
+        musiccontroller.mixtape.splice(i+1, 0, music);
+       
+
+       
+    }
+
+    console.log(i, musiccontroller.trackid)
+    musiccontroller.Mix.UpdateMixVariables()
+}
 export function ButtonBox(){
-return <div id="button-box" className=" bg-black flex flex-row justify-center items-center gap-6 ">
+    
+
+    const defaultvolvalue = musiccontroller.Youtube.getVolume()
+    
+return <div className=" bg-black flex flex-row justify-between items-center gap-6 px-3 ">
    {/*ButtonMix(MoveUp,musiccontroller.Mix.MoveUp)*/}
         {/*ButtonMix(MoveDown,musiccontroller.Mix.MoveDown)*/}
-        
+        <SlideTime/>
+        <div className="flex flex-row items-center">
         {ButtonMix(SkipBack,()=>{musiccontroller.Mix.NextOrBackTrack(-1)} )}
      {PlayOrPause()}
         {ButtonMix(SkipForward,()=>{musiccontroller.Mix.NextOrBackTrack(1)} )}
+        </div>
+        <Slider className="w-24"  defaultValue={[defaultvolvalue]} max={100}  step={1} onValueChange={(value) => {musiccontroller.Set.Volume(value[0])}}/>
         </div>  
    
+}
+
+function SlideTime(){
+    const currenttime = musiccontroller.Youtube.getCurrentTime()
+    const maxduration = musiccontroller.Youtube.getDuration()
+
+return <div className="flex flex-row gap-1 w-24">
+<p>{musiccontroller.Get.VideoDuration()}</p>
+<Slider defaultValue={[currenttime]} max={maxduration}  step={1} onValueCommit={(value) => {musiccontroller.Youtube.seekTo(value[0], true);}} />
+</div>
 }
 function ButtonMix(Icon : LucideIcon,call : () => void)
 {
@@ -90,8 +151,4 @@ function PlayOrPause()
 return <div className="w-8 h-8 rounded-full bg-white relative" onClick={musiccontroller.PlayOrPauseMusic}>
     <Icon color="black" className={"absolute top-[50%] transform -translate-x-1/2 -translate-y-1/2 " + left}/>
 </div>
-}
-export function avisos(){
-
-    //aqui eu verifico as coisas la do player, mas o controller que me renderiza denovo, ele vai achar minha tag e vai me renderizar no proprio elemento dnv
 }
