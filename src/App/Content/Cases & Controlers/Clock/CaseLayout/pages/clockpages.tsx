@@ -68,7 +68,7 @@ export function font(){
 <div className="flex flex-row gap-2 w-40">
     <Button onClick={() =>clockcontroller.Set.font(" font-sans ")} className="w-36 h-24 text-6xl font-sans bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>
     <Button onClick={() =>clockcontroller.Set.font(" font-serif ")} className="w-36 h-24 text-6xl font-serif bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>
-    <Button onClick={() =>clockcontroller.Set.font(" font-thin ")} className="w-36 h-24 text-6xl font-thin bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>
+    <Button onClick={() =>clockcontroller.Set.font(" font-thin font-extralight ")} className="w-36 h-24 text-6xl font-thin font-extralight bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>
     <Button onClick={() =>clockcontroller.Set.font(" font-rubikscribble ")} className="w-48 h-24 text-6xl font-rubikscribble bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>
     <Button onClick={() =>clockcontroller.Set.font(" font-mono ")} className="w-48 h-24 text-6xl font-mono bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>
     <Button onClick={() =>clockcontroller.Set.font(" font-rubikdoodle ")} className="w-48 h-24 text-6xl font-rubikdoodle bg-[#4A2121] rounded-xl hover:bg-[#331212]">12:00</Button>

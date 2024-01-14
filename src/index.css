@@ -71,8 +71,9 @@
   * {
     @apply border-border;
   }
+  /*url(https://res.cloudinary.com/dtochimsz/image/upload/v1705157917/kylshzmahdbglzzkykfs.png);*/
   body {
-    background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705157917/kylshzmahdbglzzkykfs.png);
+    background: black;
 background-size: cover;
 background-position: center;
   }
@@ -154,7 +155,12 @@ background-position: center;
 /*Rubik Scribble 400
 Rubik Doodle Triangles 400
 Oswald 200 400 700*/
-
+.font-cartegory{
+  font-family: 'Dancing Script', sans-serif;
+  white-space: wrap;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  color: white
+}
 .font-rubik{
   font-family: 'Rubik Lines', sans-serif;
   
@@ -182,4 +188,24 @@ Oswald 200 400 700*/
 ::-webkit-scrollbar-thumb {
 
   background-color: #ffffff;
+}
+
+
+/*Cartegories*/
+
+#cartegory-lofi{
+  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705263348/_3e779ecb-0876-4943-b679-5a56fd77f8e1_kupkqw.jpg);
+  background-size: cover; 
+
+}
+#cartegory-lofi-vibes{
+  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_c95587fc-4241-4561-b028-76d86c60d6f5_c2bojl.jpg) center;
+  background-size: cover;
+}#cartegory-lofi-jazz{
+background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_b3e8bd3f-1d63-4a9c-9f68-d59f78417b2c_qgevmj.jpg) center;
+background-size: cover;
+}
+#cartegory-lofi-sleep{
+  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_aa77f22e-a8e0-4902-a131-c63a119c734d_eukhmk.jpg) center;
+  background-size: cover;
 }
