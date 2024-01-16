@@ -71,9 +71,8 @@
   * {
     @apply border-border;
   }
-  /*url(https://res.cloudinary.com/dtochimsz/image/upload/v1705157917/kylshzmahdbglzzkykfs.png);*/
   body {
-    background: black;
+    background: black url(https://res.cloudinary.com/dtochimsz/image/upload/v1705157917/kylshzmahdbglzzkykfs.png);
 background-size: cover;
 background-position: center;
   }

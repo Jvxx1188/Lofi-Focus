@@ -5,7 +5,7 @@ import React from "react";
 
 function BGLayoutComponent(){
     return <div>
-        <h1>aaa</h1>
+        <h1 className="bg-black">Background's soon</h1>
     </div>
 }
 export default BGLayoutComponent;

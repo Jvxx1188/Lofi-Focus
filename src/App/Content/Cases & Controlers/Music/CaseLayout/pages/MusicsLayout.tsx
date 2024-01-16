@@ -195,9 +195,9 @@ return <div className='px-4 '>
 
 
     CustomLayout = () =>{
-        return <div onClick={()=>this.Render("layout")}>
-            custom
-        </div>
+        return <button onClick={()=>this.Render("layout")}>
+            Working | Click to back
+        </button>
     }
 
 

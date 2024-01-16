@@ -24,10 +24,12 @@ export default function MusicCaseLayout(){
 
 
         case 1:
-        
+        console.log("estou na case 1")
         setTimeout(() => {
+            console.log("setando a case 3")
             ChangeValue.change(3)
         }, 5)
+        
         break;
             case 2 : 
             return <div id="music-layout-box">
