@@ -12,7 +12,7 @@ class ClockController{
    constructor(){
     this.localtime = new Date()
     this.color = " white "
-    this.font = " font-sans "
+    this.font = " font-oswald-700 "
     this.size = " text-6xl "
     this.position = " text-end self-end "
     this.weight = " font-semibold "

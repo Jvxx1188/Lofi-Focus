@@ -1,42 +1,42 @@
 import Mix from "./pages/Mix"
 import {musiclayout} from "./pages/MusicsLayout"
-import React, { useCallback } from "react"
+import React from "react"
+import ReactDOM from 'react-dom/client';
+
+//a minha case vai retornar meu componente,
+//acionar a variavel change que vai trocar a case e renderizar denovo na caixa
+
 
 export default function MusicCaseLayout(){
-    const [casevalue,SetCase] = React.useState(0)
+
+    return <div id="music-layout-container">
+    {MusicLayoutManager(0)}
+    </div>
+}
+ function MusicLayoutManager(value : number){
 
     const ChangeValue ={
-   change : useCallback((value)=>{
-    console.log(value)
-        SetCase(value)
-    },[])
+   change : ((newvalue : number)=>{
+
+    console.log("aaa")
+    const musiclayoutdiv = document.getElementById("music-layout-container") 
+
+    if(!musiclayoutdiv) return
+
+    const root = ReactDOM.createRoot(musiclayoutdiv);
+    root.render(
+       MusicLayoutManager(newvalue)
+    )
+
+
+   })
     }
     
-    switch (casevalue){
-        case 0:
-            //do 1 pro 2
-            //isso da um tempo para que o componente de renderização do mix saia
-            setTimeout(() => {
-                ChangeValue.change(2)
-            }, 5);
-            break;
-
-
-
-        case 1:
-        console.log("estou na case 1")
-        setTimeout(() => {
-            console.log("setando a case 3")
-            ChangeValue.change(3)
-        }, 5)
-        
-        break;
-            case 2 : 
-            return <div id="music-layout-box">
+    switch (value){
+        case 0: return <div id="music-layout-box">
             {musiclayout.Start(ChangeValue)}
         </div>
-        case 3 : 
-        console.log("mix")
+        case 1:
             return <div>
             {
             Mix(ChangeValue)} 

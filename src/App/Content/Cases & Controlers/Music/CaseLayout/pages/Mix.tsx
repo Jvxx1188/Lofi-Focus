@@ -8,7 +8,7 @@ export default function Mix(Case){
 return <h1 id="loading-mix">Carregando</h1>
         }
 
-  return  <div className="w-96 max-h-96 bg-yellow-600 flex flex-col rounded-3xl overflow-hidden">
+  return  <div className="w-96 max-h-96 bg-yellow-600 rounded-3xl overflow-hidden">
       
       <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
           {/*//caixa que guarda os botoes de mix e voltar*/}  
@@ -59,16 +59,22 @@ function trackdiv(music : VideoObject,i : number){
     <p >{music.name}</p>
     <p className='text-xs text-slate-100'>{music.authorname}</p>
     </div>
+
+    <div className="flex flex-row items-center gap-3">
+    {/*Live*/}
+    <p className={music.type === "live" ?"text-red-600" : ""}>{music.type}</p>
+    {/*Arrows*/}
     <div className='w-4 flex flex-col gap-[1px] rounded-full bg-white bg-opacity-10 border-[0.1px] ' id='track-roll'>
-  
-  <div onClick={() =>ChangeMusicIndex(1,musiccontroller.mixtape[i],i)} id='mix-roll-up' className=' h-3 flex items-center justify-center rounded-t-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
-  <ChevronUp size={15}/>
-  </div>
-  <Separator/>
-  <div onClick={() =>ChangeMusicIndex(2,musiccontroller.mixtape[i],i)} id='mix-roll-down' className=' h-3 flex items-center justify-center rounded-b-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
-  <ChevronDown size={15}/>
-  </div>
+    <div onClick={() =>ChangeMusicIndex(1,musiccontroller.mixtape[i],i)} id='mix-roll-up' className=' h-3 flex items-center justify-center rounded-t-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
+    <ChevronUp size={15}/>
     </div>
+    <Separator/>
+    <div onClick={() =>ChangeMusicIndex(2,musiccontroller.mixtape[i],i)} id='mix-roll-down' className=' h-3 flex items-center justify-center rounded-b-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
+    <ChevronDown size={15}/>
+    </div>
+    </div>
+    </div>
+    
     </div>
     
     /*<div >

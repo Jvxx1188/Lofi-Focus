@@ -2,7 +2,7 @@ import React from "react"
 import { cartegories} from '../../Controler/musics/selected';
 import ReactDOM from "react-dom/client";
 import { musiccontroller } from "../../Controler/MusicControler";
-
+import { YoutubeIcon } from "lucide-react";
 
 
 class MusicLayout{
@@ -161,15 +161,31 @@ return <div className="">
 <div className="flex-1 flex flex-col gap-2 overflow-scroll">
 {Obj.map((obj)=>{
 return <div className='px-4 '> 
-<div className={'flex flex-row justify-between   h-12 rounded-3xl bg-[#7676FF] bg-opacity-30 text-white text-md font-medium items-center justify-between border-[2px] border-[#bbbbbb3f] '}>
+<div className={'flex flex-row justify-between   h-12 rounded-3xl bg-[#7676FF] bg-opacity-30 text-white text-md font-medium items-center justify-between border-[2px] border-[#bbbbbb3f] gap-8'}>
 
-<div id='mix-tittle' className='flex-1 flex flex-col p-1  px-5'>
-<p >{obj.name}</p>
+<div id='mix-tittle' className='flex-1 whitespace-nowrap text-ellipsis overflow-hidden flex flex-col p-1  pl-5'>
+<p className="">{obj.name}</p>
 <p className='text-xs text-slate-100'>{obj.authorname}</p>
 </div>
-<div className='bg-white w-12 h-12 rounded-full flex items-center justify-center text-black italic font-extrabold duration-100 border-white hover:bg-black hover:border-4  hover:cursor-pointer hover:text-white active:border-[24px] active:duration-0 ' onClick={()=>{musiccontroller.Mix.AddMusicMix(obj)}}>
-<h1>Add</h1>
-</div>
+
+    <div className="flex justify-between items-center gap-2  ">
+   
+   
+    {/*tipo do som*/}
+
+    <p className="italic text-[#ffffffcb]">{obj.type}</p>
+    {/*Icone do youtube*/}
+    <a href={obj.url} target="_blank" className="text-red-600 hover:text-black">
+    <YoutubeIcon />
+    </a>
+    {/*Botao de adicionar*/}
+    <div className='bg-white w-12 h-12 rounded-full flex items-center justify-center text-black italic font-extrabold duration-100 border-white hover:bg-black hover:border-4  hover:cursor-pointer hover:text-white active:border-[24px] active:duration-0 ' onClick={()=>{musiccontroller.Mix.AddMusicMix(obj)}}>
+    <h1>Add</h1>
+    </div>
+
+    </div>
+
+
 </div>
 
 </div>

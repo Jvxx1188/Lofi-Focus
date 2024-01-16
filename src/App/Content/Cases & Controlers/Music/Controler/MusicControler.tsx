@@ -17,7 +17,7 @@ class MusicController{
     //a primeira coisa que devo fazer é manualmente conseguir gerenciar as musicas
     
     public mixtape : Array<VideoObject> = []
-    trackid : number = 0 
+    trackid : number = -1 
     public msc ;
     public Youtube : YT.Player;
     public hastarted = 0;
@@ -32,7 +32,7 @@ class MusicController{
         this.Youtube = new YT.Player('music-layer',{
             height: '0',
             width: '0',
-            videoId: '6I2pyW6dmsE',
+            videoId: '',
          playerVars : {
             autoplay : 0,
          }
