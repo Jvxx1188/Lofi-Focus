@@ -187,9 +187,11 @@ Oswald 200 400 700*/
 }
 ::-webkit-scrollbar-thumb {
 
-  background-color: #ffffff;
+  background-color: #ffffff61;
 }
-
+::-webkit-scrollbar-corner{
+  background-color: rgba(44, 0, 240, 0);
+}
 
 /*Cartegories*/
 
@@ -208,4 +210,8 @@ background-size: cover;
 #cartegory-lofi-sleep{
   background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_aa77f22e-a8e0-4902-a131-c63a119c734d_eukhmk.jpg) center;
   background-size: cover;
+}#cartegory-undertale{
+  background: url(https://upload.wikimedia.org/wikipedia/commons/2/26/Undertale-logo.jpg) center black;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

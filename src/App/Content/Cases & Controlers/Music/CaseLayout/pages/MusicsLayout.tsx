@@ -1,6 +1,7 @@
 import React from "react"
 import { cartegories} from '../../Controler/musics/selected';
 import ReactDOM from "react-dom/client";
+import { musiccontroller } from "../../Controler/MusicControler";
 
 
 
@@ -58,19 +59,6 @@ public Start = (Case)=>{
 
 
 
-    BarPageSelection = ()=>{
-        return <div className="w-full h-20 items-center  flex flex-row justify-between rounded-t-3xl overflow-hidden">
-            
-            <div className="w-full bg-yellow-60 text-center" onClick={()=>this.Case.change(1) 
-        }>Mix</div>
-
-
-        <div className="w-full bg-white text-center" onClick={()=>this.Render("custom")
-        }>Custom</div>
-
-        </div> 
-    }
-
 
 
 
@@ -78,15 +66,24 @@ public Start = (Case)=>{
     
    private MusicsLayout = () =>{
     //aqui é a caixa do layout de musica
-        return <div className="w-96 h-96 bg-gradient-to-tr from-black to-[#000F82] flex flex-col gap-5 rounded-3xl overflow-hidden ">
+        return <div className="w-96 h-96 bg-gradient-to-tr from-black to-[#000F82]  flex flex-col rounded-3xl overflow-hidden justify-between pb-2">
         
-        {this.BarPageSelection()}
+        <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
+            
+            <div className="w-full h-full item flex justify-center items-center bg-[#C98B25] duration-100 text-white text-center text-xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>this.Case.change(1) 
+        }>Mix</div>
 
-        <div id="music-layout-cartegories" className="bg-[#7676FF] bg-opacity-20 rounded-3xl" >
-       <div className="">
-       {this.CartegoryBox()}
+
+        <div className="w-full h-full bg-[#3089DB] flex justify-center items-center duration-100 text-white text-xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>this.Render("custom")
+        }>Custom</div>
 
         </div> 
+
+        <div id="music-layout-cartegories" className="bg-[#7676FF] bg-opacity-20 rounded-3xl mt-4 pt-2  mx-3 overflow-hidden flex-1" >
+     
+       {this.CartegoryBox()}
+
+       
         </div>
     </div>
 }
@@ -99,7 +96,7 @@ public Start = (Case)=>{
 CartegoryBox = () =>{
 
     //aqui faz o map de todas as cartegorias
-    return <div className=" p-3 grid grid-cols-2 gap-6 justify-items-center">
+    return <div className="h-full grid grid-cols-2 gap-4 justify-items-center rounded-3xl overflow-scroll  px-3">
 
  {cartegories.map((cartegorie,i ) =>{
 //eu vou trocar meu id pro id do meu componente que consequentemente vai chamar a minha função de listar os componentes
@@ -111,6 +108,7 @@ const cartegory = (()=>{
     case 1:return {id: "cartegory-lofi-jazz",name :"lofi Jazz"}
     case 2 : return {id: "cartegory-lofi-sleep",name :"Lofi Sleep"}
     case 3 : return {id: "cartegory-lofi-vibes",name :"lofi Vibes"}
+    case 4 : return {id: "cartegory-undertale",name :""}
         }
 }
 )
@@ -137,24 +135,58 @@ return <div className="">
 
 
 
- CartegoriesLayout = (Obj) =>{
+ CartegoriesLayout = (Obj ) =>{
     //aqui é a seção de cartegoria, é a outra pagina
     console.log(Obj);
-    return<div className="w-96 h-[80%] flex-1 flex flex-col px-2 bg-black">
-        <h1 onClick={this.Case.change(0)}>Back</h1>
-        <h1 onClick={this.Case.change(1)}>Mix</h1>
+    return <div>
+        {/*caixamaior*/}
+    <div className="w-96 h-96 flex flex-col gap-4 bg-gradient-to-tl from-[#0097FF] to-[#194FBD] rounded-3xl">
+    <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
+          {/*//caixa que guarda os botoes de mix e voltar*/}  
+            <div className="w-full h-full item flex justify-center items-center bg-[#C98B25] duration-100 text-white text-center text-xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>this.Case.change(1) 
+        }>Mix</div>
+
+
+        <div className="w-full h-full bg-[#3089DB] flex justify-center items-center duration-100 text-white text-xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>this.Render("layout")
+        }>Back</div>
+
+        </div> 
+
+
+
+
+
+ 
+{/*Musicas*/}
+<div className="flex-1 flex flex-col gap-2 overflow-scroll">
+{Obj.map((obj)=>{
+return <div className='px-4 '> 
+<div className={'flex flex-row justify-between   h-12 rounded-3xl bg-[#7676FF] bg-opacity-30 text-white text-md font-medium items-center justify-between border-[2px] border-[#bbbbbb3f] '}>
+
+<div id='mix-tittle' className='flex-1 flex flex-col p-1  px-5'>
+<p >{obj.name}</p>
+<p className='text-xs text-slate-100'>{obj.authorname}</p>
+</div>
+<div className='bg-white w-12 h-12 rounded-full flex items-center justify-center text-black italic font-extrabold duration-100 border-white hover:bg-black hover:border-4  hover:cursor-pointer hover:text-white active:border-[24px] active:duration-0 ' onClick={()=>{musiccontroller.Mix.AddMusicMix(obj)}}>
+<h1>Add</h1>
+</div>
+</div>
+
+</div>
+})}
+</div>
+
+    
+
     {
-        Obj.map((music) => {
-            return <div className={'flex flex-row px-1 py-4  h-8 rounded-lg text-white text-sm font-medium items-center justify-between border border-yellow-400 hover:bg-[#F7852F]'}>
-    <div id='mix-tittle' className='flex-1 flex flex-col p-1'>
-    <p >{music.name}</p>
-    <p className='text-xs text-slate-100'>{music.authorname}</p>
-    </div>
-    </div>
+        //musica
+           
    
-        })
     }
 </div>
+    </div>
+   
+
 }
 
 

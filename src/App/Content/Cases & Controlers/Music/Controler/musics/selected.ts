@@ -62,6 +62,11 @@ export const cartegories = [
     url : "https://www.youtube.com/watch?v=gRmxPMQzPKc",
     type : "video",authorname : "Tollam Kim"}
     
+],
+[
+    {name : "teste",
+    url : "a",
+    type : "video",authorname : "lofigirl"}
 ]
 ]
   

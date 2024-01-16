@@ -9,6 +9,14 @@ return <h1 id="loading-mix">Carregando</h1>
         }
 
   return  <div className="w-96 max-h-96 bg-yellow-600 flex flex-col rounded-3xl overflow-hidden">
+      
+      <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
+          {/*//caixa que guarda os botoes de mix e voltar*/}  
+            <div className="w-full h-full item flex justify-center items-center bg-[#3089DB]  duration-100 text-white text-center text-xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>Case.change(0) 
+        }>Layout</div>
+
+        </div> 
+       
        
        <div  id="button-box"><ButtonBox/></div>
        
@@ -16,7 +24,7 @@ return <h1 id="loading-mix">Carregando</h1>
         <div  id="tracks"><MixTracksBox/></div>
        </div>
        
-       <div onClick={()=>{Case.change(0)}} className="w-10 h-10 bg-black"/>
+       
        <div id="mix-avisos">
         <Avisos/>
        </div>

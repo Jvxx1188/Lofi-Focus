@@ -197,9 +197,11 @@ return "0:00"
                 console.log("done")
                this.Mix.UpdateMixVariables()
             },
-            AddMusicMix : () =>{
-                
-                //adiciona um obj novo no array da playlist
+            AddMusicMix : (MusicObject : VideoObject) =>{
+                //verificações se esta tudo ok
+                //mix esta funcionando
+                this.mixtape.push(MusicObject)
+                this.Mix.UpdateMixVariables()
             },
             ResetMix : () =>{
                 //limpa o array
