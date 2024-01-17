@@ -20,9 +20,7 @@ return <h1 id="loading-mix">Carregando</h1>
        
        <div  id="button-box"><ButtonBox/></div>
        
-        <div className="overflow-y-scroll">
-        <div  id="tracks"><MixTracksBox/></div>
-       </div>
+        <div  id="tracks" className=" overflow-y-scroll h-72"><MixTracksBox/></div>
        
        
        <div id="mix-avisos">
@@ -38,7 +36,7 @@ export function Avisos(){
 }
 
 export function MixTracksBox(){
-    return <div className="w-full flex-1 flex flex-col px-2">
+    return <div className="w-full flex flex-col px-2 gap-1">
     {
         musiccontroller.mixtape.map((music,i) => {
             return trackdiv(music,i)
@@ -54,8 +52,8 @@ function trackdiv(music : VideoObject,i : number){
        classname += " bg-[#D88843] " 
    }
 
-    return <div className={'flex flex-row px-1 py-4  h-8 rounded-lg text-white text-sm font-medium items-center justify-between border border-yellow-400 hover:bg-[#F7852F]'+ classname}>
-    <div id='mix-tittle' className='flex-1 flex flex-col p-1' onClick={() =>{ musiccontroller.trackid = i;musiccontroller.Mix.ChangeMusic(musiccontroller.mixtape[musiccontroller.trackid]); }}>
+    return <div className={'flex flex-row gap-4 px-1 py-4  h-8 rounded-lg text-white text-sm font-medium items-center justify-between border border-yellow-400 hover:bg-[#F7852F]'+ classname}>
+    <div id='mix-tittle' className='flex-1 flex flex-col p-1 text-nowrap overflow-ellipsis overflow-hidden' onClick={() =>{ musiccontroller.trackid = i;musiccontroller.Mix.ChangeMusic(musiccontroller.mixtape[musiccontroller.trackid]); }}>
     <p >{music.name}</p>
     <p className='text-xs text-slate-100'>{music.authorname}</p>
     </div>

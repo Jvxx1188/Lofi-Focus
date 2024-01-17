@@ -199,6 +199,11 @@ Oswald 200 400 700*/
   background-size: cover; 
 
 }
+#cartegory-lofi-chill{
+  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705496919/_37b54a6b-c032-4ae8-bc0e-5f07763bb980_bdwkjl.jpg);
+  background-size: cover; 
+}
+
 #cartegory-lofi-vibes{
   background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_c95587fc-4241-4561-b028-76d86c60d6f5_c2bojl.jpg) center;
   background-size: cover;
@@ -211,6 +216,16 @@ background-size: cover;
   background-size: cover;
 }#cartegory-undertale{
   background: url(https://upload.wikimedia.org/wikipedia/commons/2/26/Undertale-logo.jpg) center black;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#cartegory-minecraft{
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Userbox_creeper.svg/1200px-Userbox_creeper.svg.png) top black;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#cartegory-omori{
+  background: url(https://static.fontbolt.com/themes-452px/64da0063e64a1.png) top black;
   background-size: contain;
   background-repeat: no-repeat;
 }

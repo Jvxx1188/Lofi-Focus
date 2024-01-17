@@ -69,9 +69,6 @@ PlayOrPauseMusic = () =>{
         this.Youtube.playVideo()
     }
 }
-VideoEnded = () =>{
-    
-}
 
     extractYouTubeVideoId =(url : string)=> {
     let videoId = "";
@@ -125,13 +122,17 @@ VideoEnded = () =>{
 
             RandomMix : (musicas : Array<VideoObject>) =>{
         //pega 
-        
+        const allmusics = musicas.filter(obj => obj.type == "music")
+        const allplaylists = musicas.filter(obj => obj.type == "playlist")
+
+
+        //ele 10 vezes vai adicionar um objeto aleatorio no mix
         for(let i = 0; i < 10; i++){
-            //ele 10 vezes vai adicionar um objeto aleatorio no mix
-           
-            this.mixtape.push(musicas[Math.floor(Math.random() * musicas.length)] as VideoObject)
-            
+            this.mixtape.push(allmusics[Math.floor(Math.random() * allmusics.length)] as VideoObject)
         }
+        //PLAYLIST EXTRA Acontece só uma vez
+        if(allplaylists.length == 0) return;
+        this.mixtape.push(allplaylists[Math.floor(Math.random() * allplaylists.length)] as VideoObject)
         },
 
         Volume : (vol : number)=>{

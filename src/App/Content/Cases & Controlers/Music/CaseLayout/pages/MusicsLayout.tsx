@@ -105,10 +105,13 @@ CartegoryBox = () =>{
 const cartegory = (()=>{
     switch(i){
         case 0: return {id: "cartegory-lofi",name :"Lofi"}
-    case 1:return {id: "cartegory-lofi-jazz",name :"lofi Jazz"}
-    case 2 : return {id: "cartegory-lofi-sleep",name :"Lofi Sleep"}
-    case 3 : return {id: "cartegory-lofi-vibes",name :"lofi Vibes"}
-    case 4 : return {id: "cartegory-undertale",name :""}
+    case 1:return {id: "cartegory-lofi-chill",name :"lofi Chill"}
+    case 2:return {id: "cartegory-lofi-jazz",name :"lofi Jazz"}
+    case 3 : return {id: "cartegory-lofi-sleep",name :"Lofi Sleep"}
+    case 4 : return {id: "cartegory-lofi-vibes",name :"lofi Vibes"}
+    case 5 : return {id: "cartegory-undertale",name :""}
+    case 6 : return {id: "cartegory-minecraft",name :""}
+    case 7 : return {id: "cartegory-omori",name :""}
         }
 }
 )
