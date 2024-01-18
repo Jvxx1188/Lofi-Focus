@@ -1,7 +1,7 @@
 import React from "react"
 import { VideoObject, musiccontroller } from "../../Controler/MusicControler"
 import {Slider} from "../../../../../../components/ui/slider"
-import { Play,Pause,SkipForward,SkipBack, LucideIcon, ChevronUp, ChevronDown } from "lucide-react"
+import { Play,Pause,SkipForward,SkipBack, LucideIcon, ChevronUp, ChevronDown,ListRestart, X } from "lucide-react"
 import {Separator} from "../../../../../../components/ui/separator"
 export default function Mix(Case){
     if(!musiccontroller.Youtube || musiccontroller.hastarted == 0){
@@ -122,9 +122,9 @@ export function ButtonBox(){
 
     const defaultvolvalue = musiccontroller.Youtube.getVolume()
     
-return <div className=" bg-black flex flex-row justify-between items-center gap-6 px-3 ">
+return <div className=" bg-black flex flex-row justify-between items-center gap-3 px-3 ">
    {/*ButtonMix(MoveUp,musiccontroller.Mix.MoveUp)*/}
-        {/*ButtonMix(MoveDown,musiccontroller.Mix.MoveDown)*/}
+        <RandomMix/>
         <SlideTime/>
         <div className="flex flex-row items-center">
         {ButtonMix(SkipBack,()=>{musiccontroller.Mix.NextOrBackTrack(-1)} )}
@@ -132,15 +132,32 @@ return <div className=" bg-black flex flex-row justify-between items-center gap-
         {ButtonMix(SkipForward,()=>{musiccontroller.Mix.NextOrBackTrack(1)} )}
         </div>
         <Slider className="w-24"  defaultValue={[defaultvolvalue]} max={100}  step={1} onValueChange={(value) => {musiccontroller.Set.Volume(value[0])}}/>
+       
+   <ClearMix/>
+       
         </div>  
-   
 }
 
+function RandomMix(){
+    return <div onClick={()=>{
+        musiccontroller.Set.GlobalRandomMix()
+        musiccontroller.Mix.UpdateMixVariables()
+    }}>
+        <ListRestart/>
+    </div>
+}
+function ClearMix(){
+    return <div onClick={()=>{
+        musiccontroller.ClearMix()
+    }}>
+        <X/>
+    </div>
+}
 function SlideTime(){
     const currenttime = musiccontroller.Youtube.getCurrentTime()
     const maxduration = musiccontroller.Youtube.getDuration()
 
-return <div className="flex flex-row gap-1 w-24">
+return <div className="flex flex-row gap-2 w-24">
 <p>{musiccontroller.Get.VideoDuration()}</p>
 <Slider defaultValue={[currenttime]} max={maxduration}  step={1} onValueCommit={(value) => {musiccontroller.Youtube.seekTo(value[0], true);}} />
 </div>

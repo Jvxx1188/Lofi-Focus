@@ -2,7 +2,7 @@ import React from "react"
 import { cartegories} from '../../Controler/musics/selected';
 import ReactDOM from "react-dom/client";
 import { musiccontroller } from "../../Controler/MusicControler";
-import { YoutubeIcon } from "lucide-react";
+import { YoutubeIcon,ListRestart } from "lucide-react";
 
 
 class MusicLayout{
@@ -141,7 +141,7 @@ return <div className="">
  CartegoriesLayout = (Obj ) =>{
     //aqui é a seção de cartegoria, é a outra pagina
     console.log(Obj);
-    return <div>
+    return <div className="relative">
         {/*caixamaior*/}
     <div className="w-96 h-96 flex flex-col gap-4 bg-gradient-to-tl from-[#0097FF] to-[#194FBD] rounded-3xl">
     <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
@@ -195,13 +195,13 @@ return <div className='px-4 '>
 })}
 </div>
 
-    
+    <div className="absolute top-[100%] left-[0%] translate-y-[-100%] flex flex-row items-end gap-1">
 
-    {
-        //musica
-           
-   
-    }
+    <div onClick={()=>musiccontroller.Set.RandomMix(Obj)} className="rounded-full bg-white text-black duration-200 hover:bg-black hover:text-white hover:cursor-pointer p-2 active:bg-white active:duration-0">
+    <ListRestart size={20}/>  
+    </div> 
+    <p className="text-xs from-accent-foreground">Random Mix of the Cartegory</p>
+    </div>
 </div>
     </div>
    

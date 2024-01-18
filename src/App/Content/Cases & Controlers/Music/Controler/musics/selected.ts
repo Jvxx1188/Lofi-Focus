@@ -75,8 +75,11 @@ export const cartegories = [
     url : "https://youtu.be/BH-SnQ8J1VU?si=ropXNpyTN978V9NC",
     type : "music",authorname : "BreakingCopyright"},
     
-    {name : "Super Shy - New Jeans (Lofi Remix)",
+    {name : "You inspire me ◍ lofi ◍ music for stress relief",
     url : "https://www.youtube.com/watch?v=gRmxPMQzPKc",
+    type : "playlist",authorname : "Dreamy"},
+    {name : "Aesthetic",
+    url : "https://www.youtube.com/watch?v=dgJ6VRcwTcw",
     type : "music",authorname : "Tollam Kim"}
     
 ],
@@ -85,7 +88,7 @@ export const cartegories = [
     {name : "001 - Once Upon A Time | Undertale OST",
     url : "https://youtu.be/s7RRgF5Ve_E?si=yVNBCREUAU0VmtJT",
     type : "music",authorname : "Toby Fox"},
-    {name : "| Undertale OST",
+  /*  {name : "| Undertale OST",
     url : "",
     type : "music",authorname : "Toby Fox"},
     {name : "| Undertale OST",
@@ -103,7 +106,7 @@ export const cartegories = [
     {name : "| Undertale OST",
     url : "",
     type : "music",authorname : "Toby Fox"}
-],
+*/],
 //minecraft
 [
     {name : "Minecraft Music Slowed Down 🎵 With Rain 🌧️",

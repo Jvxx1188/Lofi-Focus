@@ -98,7 +98,18 @@ PlayOrPauseMusic = () =>{
     }
 
  
-  
+  ClearMix = () =>{
+    const MscAtual = this.mixtape[this.trackid]
+
+
+    this.mixtape = []
+    if(MscAtual){
+        this.mixtape.push(MscAtual)
+    }
+
+    this.Mix.UpdateMixVariables()
+    this.trackid = 0;
+  }
 
 //função que automaticamente vai pegar todas as cartegorias
         public Set ={
@@ -127,9 +138,13 @@ PlayOrPauseMusic = () =>{
 
 
         //ele 10 vezes vai adicionar um objeto aleatorio no mix
-        for(let i = 0; i < 10; i++){
-            this.mixtape.push(allmusics[Math.floor(Math.random() * allmusics.length)] as VideoObject)
+        if(allmusics.length > 0){
+            for(let i = 0; i < 10; i++){
+                this.mixtape.push(allmusics[Math.floor(Math.random() * allmusics.length)] as VideoObject)
+            }
         }
+        
+
         //PLAYLIST EXTRA Acontece só uma vez
         if(allplaylists.length == 0) return;
         this.mixtape.push(allplaylists[Math.floor(Math.random() * allplaylists.length)] as VideoObject)
