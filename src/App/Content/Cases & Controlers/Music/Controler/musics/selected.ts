@@ -77,10 +77,7 @@ export const cartegories = [
     
     {name : "You inspire me ◍ lofi ◍ music for stress relief",
     url : "https://www.youtube.com/watch?v=gRmxPMQzPKc",
-    type : "playlist",authorname : "Dreamy"},
-    {name : "Aesthetic",
-    url : "https://www.youtube.com/watch?v=dgJ6VRcwTcw",
-    type : "music",authorname : "Tollam Kim"}
+    type : "playlist",authorname : "Dreamy"}
     
 ],
 //undertale
