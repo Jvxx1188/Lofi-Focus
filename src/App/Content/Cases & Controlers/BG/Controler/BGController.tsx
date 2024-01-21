@@ -3,15 +3,13 @@ import { musiccontroller } from "../../Music/Controler/MusicControler";
 import ReactDOM from "react-dom/client";
 import React from "react";
 class BGController {
-    
-    MonitorRadio = [16,9]
+    private youtube : YT.Player
     constructor(){
-
+    
     }
    Set = {
     Video : (videoobj : VideoObj) =>{
       const videoid =  musiccontroller.extractYouTubeVideoId(videoobj.url);
-      
        let extra;
         
        //radio DO VIDEO
@@ -21,27 +19,40 @@ class BGController {
             let proporção;
             
             //horizontal ou lateral
-            console.log(this.MonitorRadio[0]/this.MonitorRadio[1] , videoobj.radio[0] / videoobj.radio[1])
+            
+            console.log(window.innerWidth / window.innerHeight , videoobj.radio[0] / videoobj.radio[1])
                 
             if(window.innerWidth / window.innerHeight < videoobj.radio[0] / videoobj.radio[1]){
                 proporção = "h-full";} else{ proporção = "w-full";}
 
-        const div = document.getElementById("bg-layer"); if(!div) return;
-        const root =  ReactDOM.createRoot(div);
+            //aqui vamos criar uma div pois meu iframe precisa de uma box  com o aspect radio nela para ele tomar o tamanho inteiro dela, tambem fazemos uma div abaixo porque se eu passar pra essa caixa a caixa vira o iframe
+        const div = document.getElementById("bg-layer-container"); if(!div) return;
+        //se ja tinha outro player ele é deletado
+        div.innerHTML = "";
+        const radio =' aspect-'+videoobj.radio[0]+"-"+videoobj.radio[1]+' ' ;
+        //essa é a caixa do iframe
+        const DivBoxToYtPlayer = document.createElement("div");
+        DivBoxToYtPlayer.id = 'DivBoxToYtPlayer';
+        DivBoxToYtPlayer.className = "w-full h-full";
+        //esta é o container da caixa com aspect radio
+        div.className = proporção+ radio +" flex items-center justify-center";
+               div.appendChild(DivBoxToYtPlayer);
 
-        const radio =videoobj.radio[0]+"/"+videoobj.radio[1]
-
-        root.render(
-            <div className={proporção+" aspect-["+radio+"] flex items-center justify-center"}>
-                <iframe className={"w-full h-full"} src={"https://www.youtube.com/embed/"+videoid+"?autoplay=1"} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-        </iframe>
-            </div>
-
-            
-        )
-        
-        
-    },
+                this.youtube = new YT.Player('DivBoxToYtPlayer',{
+                    videoId: videoid,
+                 playerVars : {
+                    autoplay : 1,
+                    disablekb : 1,
+                    showinfo : 0,
+                    controls : 0,
+                    loop : 1,
+                    iv_load_policy : 3,
+                    playlist: videoid,
+                    
+                 }
+           
+                })
+            },
 
     Image : (url : string)=>{
         const div = document.getElementById("bg-layer"); if(!div) return;

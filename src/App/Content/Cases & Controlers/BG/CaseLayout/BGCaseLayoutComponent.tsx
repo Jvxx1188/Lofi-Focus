@@ -11,14 +11,14 @@ import ReactDOM from "react-dom/client";
 
 function BGLayoutComponent(){
    
-    return <div id="bg-layout-container">
+    return <div id="bg-layout-container" className="w-full h-full flex justify-end">
         {bgmanager.BGLayoutManager(bgmanager.id)}
     </div>
 }
 
 
 class BGManager{
-    public id = 0;
+    public id = 1;
     constructor (){
 
     }
