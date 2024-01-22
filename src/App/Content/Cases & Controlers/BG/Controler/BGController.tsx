@@ -50,10 +50,14 @@ class BGController {
                     playlist: videoid,
                     
                  }
-           
-                })
-            },
-
+           ,events: {
+            onReady: (event) => {
+                event.target.mute();
+            }
+            }
+        });
+        },
+                
     Image : (url : string)=>{
         const div = document.getElementById("bg-layer"); if(!div) return;
         const root =  ReactDOM.createRoot(div);
