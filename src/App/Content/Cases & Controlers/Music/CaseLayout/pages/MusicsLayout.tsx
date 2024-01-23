@@ -66,7 +66,7 @@ public Start = (Case)=>{
     
    private MusicsLayout = () =>{
     //aqui é a caixa do layout de musica
-        return <div className="w-96 h-96 bg-gradient-to-tr from-black to-[#000F82]  flex flex-col rounded-3xl overflow-hidden justify-between pb-2">
+        return <div className="mx-[-20px] max-w-96 h-96 bg-gradient-to-tr from-black to-[#000F82]  flex flex-col rounded-3xl overflow-hidden justify-between pb-2">
         
         <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
             

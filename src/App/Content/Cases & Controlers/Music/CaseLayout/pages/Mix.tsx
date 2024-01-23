@@ -8,7 +8,7 @@ export default function Mix(Case){
 return <h1 id="loading-mix">Carregando</h1>
         }
 
-  return  <div className="w-96 max-h-96 bg-yellow-600 rounded-3xl overflow-hidden">
+  return  <div className="mx-[-20px] w-96 max-h-96 bg-yellow-600 rounded-3xl overflow-hidden">
       
       <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
           {/*//caixa que guarda os botoes de mix e voltar*/}  
