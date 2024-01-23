@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as Icon from "./Icons/IconsComponent"
-
+import { Expand } from "lucide-react";
 function NavigationBarLayout(){
+  
+  useEffect(()=>{
+    NavBar();
+  },[])
     return (
         
-        <div id="nav-layer" className="w-screen
-         h-screen flex justify-end items-end">
-        <nav id="nav-layout" className="w-72 h-10 rounded-full px-4 py-1 
-        bg-[#00000023] m-8 flex items-center justify-between border-2 border-yellow-600 
+        <div id="nav-layer" className="w-screen duration-300
+         h-screen flex justify-center items-end">
+        <div onClick={()=>FullScreen()} className="absolute top-0 left-0 m-3 w-12 h-12 text-white
+         border border-white  flex items-center justify-center
+        border-opacity-70 rounded-full bg-[rgba(255, 255, 255, 0.095)] duration-200 hover:p-3 hover:cursor-pointer hover:bg-[#0000003d] active:bg-white active:duration-0">
+        <Expand size={30}/>
+        </div>
+        <nav id="nav-layout" className="min-w-96 h-14 rounded-full px-6 py-1 
+        bg-[#0000006b]  m-8 flex items-center justify-between border-2 border-yellow-600 
         border-opacity-80 backdrop-blur-sm">
          
-          <p className="text-white select-none">
+          <p id="nav-layout-text" className="w-96 text-white text-xl select-none flex-1 overflow-hidden overflow-ellipsis">
             nada tocando
          </p>
         <div id="nav-layout-icons" className="flex flex-row items-center gap-2 ">
@@ -32,6 +41,37 @@ function NavigationBarLayout(){
     ) 
 
     
+}
+
+function FullScreen(){
+  document.body.requestFullscreen();
+}
+function NavBar(){
+  let mouseTimeout: NodeJS.Timeout;
+
+  const NavBar = document.getElementById("nav-layer");
+  if(!NavBar) return
+
+  const EsconderNavBar = () =>{
+    clearTimeout(mouseTimeout)
+    console.log("aparecendo")
+    NavBar.classList.remove("opacity-0")
+
+   mouseTimeout = setTimeout(() => {
+      console.log("escondendo")
+      NavBar.classList.add("opacity-0")
+    }, 2000);
+  }
+
+
+
+  
+document.addEventListener("mouseup",()=>{
+  EsconderNavBar()
+})
+document.addEventListener("mousemove",()=>{
+  EsconderNavBar()
+ })
 }
 export default NavigationBarLayout;
 

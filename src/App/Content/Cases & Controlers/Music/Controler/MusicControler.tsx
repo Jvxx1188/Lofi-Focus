@@ -12,7 +12,6 @@ export interface VideoObject{
     authorname : string,
     authorurl : string
 }
-
 class MusicController{
     //a primeira coisa que devo fazer é manualmente conseguir gerenciar as musicas
     
@@ -41,21 +40,21 @@ class MusicController{
         this.hastarted = 1;
         this.Mix.GetAndUpdateComponent("loading-mix",Mix)
         })
-        this.Youtube.addEventListener('onStateChange', (change)=>{
-          if(change.data == YT.PlayerState.PLAYING) {
+        this.Youtube.addEventListener('onStateChange', (change: YT.PlayerEvent)=>{
+          if(change["data"] == YT.PlayerState.PLAYING) {
             this.isplaying = true
             this.Mix.UpdateMixVariables()
             this.Mix.GetAndUpdateComponent("mix-avisos",Avisos);
           }
-          if(change.data == YT.PlayerState.BUFFERING){
+          if(change["data"] == YT.PlayerState.BUFFERING){
             this.Mix.UpdateMixVariables()
             this.Mix.GetAndUpdateComponent("mix-avisos",Avisos);
           }
-          if(change.data == YT.PlayerState.PAUSED) {
+          if(change["data"] == YT.PlayerState.PAUSED) {
             this.isplaying = false
             this.Mix.UpdateMixVariables()
           }
-            if(change.data == YT.PlayerState.ENDED){
+            if(change["data"] == YT.PlayerState.ENDED){
                 
             console.log( "Terminou")
             this.Mix.NextOrBackTrack(1)
@@ -188,7 +187,9 @@ return "0:00"
                 this.Mix.GetAndUpdateComponent("tracks",MixTracksBox)
                 this.Mix.GetAndUpdateComponent("button-box",ButtonBox)
                 
-
+                const navtext = document.getElementById("nav-layout-text")
+                if(!navtext) return
+                navtext.innerHTML = this.mixtape[this.trackid].name;
             },
             ChangeMusic :async (musicobj : VideoObject) =>{
                 if(this.trackid <0) this.trackid = 0

@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom/client';
 export default function MusicCaseLayout(){
 
     return <div id="music-layout-container">
-    {MusicLayoutManager(1)}
+    {MusicLayoutManager(0)}
     </div>
 }
  function MusicLayoutManager(value : number){

@@ -1,6 +1,6 @@
     //parei no problema que a tipagem de quando eu envio os icones para dentro do state ele da erro dizendo que não consegue atribuir htmlelement | null a never,
     import React,{Dispatch} from "react";
-    import { Clock4,Music2 ,WallpaperIcon,   LucideIcon } from "lucide-react"//as chamadas estao dentro de layout manager, 
+    import { Clock4,Music2 ,LucideIcon, WallpaperIcon} from "lucide-react"//as chamadas estao dentro de layout manager, 
 
     //pegar o evento listener e saber quando ele foi clicado, e assim chamar a função que rencia ele
 
@@ -18,7 +18,7 @@ export function IconBase(Id : string,Icon : LucideIcon){
     
     
    return (
-        <div id={myId}  className="nav-icon-container w-7 h-7 
+        <div id={myId}  className="nav-icon-container w-10 h-10 
          border border-white 
         border-opacity-70 rounded-full bg-white  hover:p-1 hover:cursor-pointer">
             <div className="w-full h-full rounded-full flex items-center justify-center">
@@ -35,7 +35,6 @@ export function IconBase(Id : string,Icon : LucideIcon){
     export const Clock=IconBase("clock",Clock4) as React.JSX.Element;
     export const Music =IconBase("music",Music2) as React.JSX.Element;
     export const Bg = IconBase("bg",WallpaperIcon) as React.JSX.Element;
-
 
 
     export function ValidateIconClicks(state :string,setstate :Dispatch<React.SetStateAction<string>>){
