@@ -11,9 +11,14 @@ import ReactDOM from "react-dom/client";
 
 function BGLayoutComponent(){
    
-    return <div id="bg-layout-container" className="w-full h-full flex justify-end">
+    return <div className="flex flex-col">
+<div id="bg-layout-container" className="w-full h-full flex justify-end">
         {bgmanager.BGLayoutManager(bgmanager.id)}
+
     </div>
+    <div className="h-20 w-10">
+            </div>
+    </div> 
 }
 
 
@@ -31,6 +36,7 @@ class BGManager{
         const root2 = ReactDOM.createRoot(root);
         root2.render(
             this.BGLayoutManager(this.id)
+            
         )
 
 

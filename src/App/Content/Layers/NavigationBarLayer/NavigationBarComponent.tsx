@@ -15,11 +15,11 @@ function NavigationBarLayout(){
         border-opacity-70 rounded-full bg-[rgba(255, 255, 255, 0.095)] duration-200 hover:p-3 hover:cursor-pointer hover:bg-[#0000003d] active:bg-white active:duration-0">
         <Expand size={30}/>
         </div>
-        <nav id="nav-layout" className="min-w-96 h-14 rounded-full px-6 py-1 
+        <nav id="nav-layout" className="h-14 rounded-full px-6 py-1 
         bg-[#0000006b]  m-8 flex items-center justify-between border-2 border-yellow-600 
-        border-opacity-80 backdrop-blur-sm">
+        border-opacity-80 backdrop-blur-sm gap-2">
          
-          <p id="nav-layout-text" className="w-96 text-white text-xl select-none flex-1 overflow-hidden overflow-ellipsis">
+          <p id="nav-layout-text" className="max-w-96 text-white text-xl select-none flex-1 overflow-hidden overflow-ellipsis">
             nada tocando
          </p>
         <div id="nav-layout-icons" className="flex flex-row items-center gap-2 ">
