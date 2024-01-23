@@ -33,7 +33,7 @@ class BGController {
         //essa é a caixa do iframe
         const DivBoxToYtPlayer = document.createElement("div");
         DivBoxToYtPlayer.id = 'DivBoxToYtPlayer';
-        DivBoxToYtPlayer.className = "w-full h-full";
+        DivBoxToYtPlayer.className = "w-full h-full aspect-video";
         //esta é o container da caixa com aspect radio
         div.className = proporção+ radio +" flex items-center justify-center";
                div.appendChild(DivBoxToYtPlayer);
