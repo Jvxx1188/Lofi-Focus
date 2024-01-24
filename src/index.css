@@ -255,9 +255,24 @@ background-size: cover;
   .coluna {
     grid-template-columns: repeat(2, 1fr);
   }
+  
 }
 @media (min-width: 750px) {
   .coluna {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+@media (min-width: 400px) {
+
+  .music-layout-cartegory-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 569px) {
+
+  .music-layout-cartegory-grid{
     grid-template-columns: repeat(3, 1fr);
   }
 }

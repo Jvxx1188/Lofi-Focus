@@ -1,31 +1,32 @@
 import React from "react"
 import { VideoObject, musiccontroller } from "../../Controler/MusicControler"
 import {Slider} from "../../../../../../components/ui/slider"
-import { Play,Pause,SkipForward,SkipBack, LucideIcon, ChevronUp, ChevronDown,ListRestart, X } from "lucide-react"
+import { Play,Pause,SkipForward,SkipBack, LucideIcon, ChevronUp, ChevronDown,ListRestart, X, YoutubeIcon } from "lucide-react"
 import {Separator} from "../../../../../../components/ui/separator"
 export default function Mix(Case){
     if(!musiccontroller.Youtube || musiccontroller.hastarted == 0){
 return <h1 id="loading-mix">Carregando</h1>
         }
 
-  return  <div className="mx-[-20px] w-96 max-h-96 bg-yellow-600 rounded-3xl overflow-hidden">
+  return  <div className="min-w-80 max-w-[500px] bg-yellow-600 rounded-3xl overflow-hidden flex flex-col">
       
-      <div className="w-full h-10 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
+      <div className="w-full h-12 flex flex-row items-center justify-between rounded-t-3xl overflow-hidden italic font-bold">
           {/*//caixa que guarda os botoes de mix e voltar*/}  
-            <div className="w-full h-full item flex justify-center items-center bg-[#3089DB]  duration-100 text-white text-center text-xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>Case.change(0) 
+            <div className="w-full h-full item flex justify-center items-center bg-[#3089DB]  duration-100 text-white text-center text-2xl hover:text-3xl hover:cursor-pointer hover:bg-black active:bg-white" onClick={()=>Case.change(0) 
         }>Layout</div>
 
         </div> 
        
        
+       
        <div  id="button-box"><ButtonBox/></div>
        
-        <div  id="tracks" className=" overflow-y-scroll h-72"><MixTracksBox/></div>
+        <div  id="tracks" className=" overflow-y-scroll h-full flex-1"><MixTracksBox/></div>
        
        
        <div id="mix-avisos">
         <Avisos/>
-       </div>
+       </div>   
 </div>
 }
 export function Avisos(){
@@ -36,7 +37,7 @@ export function Avisos(){
 }
 
 export function MixTracksBox(){
-    return <div className="w-full flex flex-col px-2 gap-1">
+    return <div className="w-full flex flex-col px-2 py-2 gap-1">
     {
         musiccontroller.mixtape.map((music,i) => {
             return trackdiv(music,i)
@@ -52,22 +53,25 @@ function trackdiv(music : VideoObject,i : number){
        classname += " bg-[#D88843] " 
    }
 
-    return <div className={'flex flex-row gap-4 px-1 py-4  h-8 rounded-lg text-white text-sm font-medium items-center justify-between border border-yellow-400 hover:bg-[#F7852F]'+ classname}>
+    return <div className={'flex flex-row gap-4 px-1 py-4  h-12 rounded-lg text-white text-sm font-medium items-center justify-between border border-yellow-400 hover:bg-[#F7852F]'+ classname}>
     <div id='mix-tittle' className='flex-1 flex flex-col p-1 text-nowrap overflow-ellipsis overflow-hidden' onClick={() =>{ musiccontroller.trackid = i;musiccontroller.Mix.ChangeMusic(musiccontroller.mixtape[musiccontroller.trackid]); }}>
-    <p >{music.name}</p>
+    <p className="text-lg" >{music.name}</p>
     <p className='text-xs text-slate-100'>{music.authorname}</p>
     </div>
 
     <div className="flex flex-row items-center gap-3">
+    <a href={music.url} target="_blank" className="text-red-600 hover:text-black">
+    <YoutubeIcon />
+    </a>
     {/*Live*/}
-    <p className={music.type === "live" ?"text-red-600" : ""}>{music.type}</p>
+    <p className={" text-lg font-semibold " + (music.type === "live" ?"text-red-600" : "")}>{music.type}</p>
     {/*Arrows*/}
-    <div className='w-4 flex flex-col gap-[1px] rounded-full bg-white bg-opacity-10 border-[0.1px] ' id='track-roll'>
-    <div onClick={() =>ChangeMusicIndex(1,musiccontroller.mixtape[i],i)} id='mix-roll-up' className=' h-3 flex items-center justify-center rounded-t-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
+    <div className='w-5 flex flex-col gap-[1px] rounded-full bg-white bg-opacity-10 border-[0.1px] ' id='track-roll'>
+    <div onClick={() =>ChangeMusicIndex(1,musiccontroller.mixtape[i],i)} id='mix-roll-up' className=' h-[18px] flex items-center justify-center rounded-t-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
     <ChevronUp size={15}/>
     </div>
     <Separator/>
-    <div onClick={() =>ChangeMusicIndex(2,musiccontroller.mixtape[i],i)} id='mix-roll-down' className=' h-3 flex items-center justify-center rounded-b-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
+    <div onClick={() =>ChangeMusicIndex(2,musiccontroller.mixtape[i],i)} id='mix-roll-down' className=' h-[18px] flex items-center justify-center rounded-b-full duration-100 hover:bg-black hover:bg-opacity-20 active:bg-yellow-950 active:duration-0'>
     <ChevronDown size={15}/>
     </div>
     </div>

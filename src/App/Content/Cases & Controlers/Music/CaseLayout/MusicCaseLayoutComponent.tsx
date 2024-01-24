@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom/client';
 
 export default function MusicCaseLayout(){
 
-    return <div id="music-layout-container">
+    return <div id="music-layout-container" className="w-full h-full flex justify-end">
     {MusicLayoutManager(0)}
     </div>
 }
@@ -33,11 +33,11 @@ export default function MusicCaseLayout(){
     }
     
     switch (value){
-        case 0: return <div id="music-layout-box">
+        case 0: return <div id="music-layout-box" className="max-w-[500px] h-full flex justify-end ">
             {musiclayout.Start(ChangeValue)}
         </div>
         case 1:
-            return <div>
+            return <div className="w-full h-full flex justify-end">
             {
             Mix(ChangeValue)} 
             </div> 
