@@ -19,7 +19,7 @@ function NavigationBarLayout(){
         bg-[#0000006b]  m-8 flex items-center justify-between border-2 border-yellow-600 
         border-opacity-80 backdrop-blur-sm gap-2">
          
-          <p id="nav-layout-text" className="max-w-96 text-white text-xl select-none flex-1 overflow-hidden overflow-ellipsis">
+          <p id="nav-layout-text" className="max-w-96 max-h-12 text-white text-xl select-none flex-1 overflow-hidden line-clamp-2 leading-6">
             nada tocando
          </p>
         <div id="nav-layout-icons" className="flex flex-row items-center gap-2 ">
