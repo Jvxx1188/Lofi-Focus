@@ -1,54 +1,18 @@
 //as cartegorias estão organizadas por objeto, quando eu requerir somente todas as musicas é facil de pegar, porem quando eu definir la no meu layout,ele ja vai conter o objeto a musica tlgd
 export const cartegories = [
-    //lofi
-    [
-        {name : "Lofi Rain ☂️ Lofi Hip Hop Mix with Soothing Rain Ambience [ Beats To Relax / Chill To ]",
-        url : "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-        type : "playlist",authorname : "The Rain City"},
+ 
+//lofi chill
+[
+    {name : "Chillhop Radio - jazzy & lofi hip hop beats 🐾",
+        url : "https://www.youtube.com/watch?v=5yx6BWlEVcY",
+        type : "live",authorname : "Chillhop Music"},
         
         {name : "lofi hip hop radio 📚 - beats to relax/study to",
         url : "https://www.youtube.com/watch?v=jfKfPfyJRdk",
         type : "live",authorname : "lofigirl"},
-
-        {name : "Wednesday vibes 🍀 Calm Your Mind ~ Lofi hip hop mix - Lofi music for sleep/study/relax/aesthetic",
-        url : "https://www.youtube.com/watch?v=4pL8_nQUKzk",
-        type : "live",authorname : "RELAXATION (LoFi & CHILL)"}
-        
-    ]
-        
-,
-//lofi chill
-[
     {name : "BlockBuster 🎥 No Copyright Lofi Hip Hop & Chillhop Mix 2022 | Chill lofi beats to study / relax to",
     url : "https://www.youtube.com/watch?v=BEXL80LS0-I",
     type : "playlist",authorname : "Stomp's Playlist"},
-    {name : "Quiet 🍀 Lofi Keep You Safe 🍃 Deep focus Study//Work [ Lofi hip hop - Lofi chill ]",
-    url : "https://www.youtube.com/watch?v=JdqL89ZZwFw",
-    type : "playlist",authorname : "LOFI KEEP YOU SAFE"},
-    {name : "Chill Winter Lofi [chill lo-fi hip hop beats]",
-    url : "https://www.youtube.com/watch?v=lVZAkpmKbQ4",
-    type : "playlist",authorname : "LOFI KEEP YOU SAFE"}]
-
-    
-    //jazz
-    ,
-     [
-        {name : "Work & Study Lofi Jazz - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
-        url : "https://www.youtube.com/watch?v=CfPxlb8-ZQ0",
-        type : "playlist",authorname : "Musictag"}
-    
-        
-    ]
-        
-,
-    //sleep
-[
-            {name : "relax lofi",
-            url : "https://www.youtube.com/watch?v=ehTuatSx5Wc",
-            type : "live",authorname : "relax lofi"},
-            {name : "Weightless",
-            url : "https://www.youtube.com/watch?v=mhjgfd8CRpQ",
-            type : "live",authorname : "Marconi Union"}
 ],
 //vibes
 [

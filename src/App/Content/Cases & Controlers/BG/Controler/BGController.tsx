@@ -68,12 +68,13 @@ class BGController {
         },
                 
     Image : (url : string)=>{
-        const div = document.getElementById("bg-layer"); if(!div) return;
+        const div = document.getElementById("bg-layer-container"); if(!div) return;
+
         const root =  ReactDOM.createRoot(div);
 
 
         root.render(
-        <img className="object-cover w-full h-full" src={url}></img>
+        <img className="object-cover w-screen h-screen overflow-hidden" src={url}></img>
         )
     }
    }

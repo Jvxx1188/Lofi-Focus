@@ -108,14 +108,11 @@ CartegoryBox = () =>{
 //aqui é o nome de cada um dos index de cartegoria
 const cartegory = (()=>{
     switch(i){
-        case 0: return {id: "cartegory-lofi",name :"Lofi"}
-    case 1:return {id: "cartegory-lofi-chill",name :"lofi Chill"}
-    case 2:return {id: "cartegory-lofi-jazz",name :"lofi Jazz"}
-    case 3 : return {id: "cartegory-lofi-sleep",name :"Lofi Sleep"}
-    case 4 : return {id: "cartegory-lofi-vibes",name :"lofi Vibes"}
-    case 5 : return {id: "cartegory-undertale",name :""}
-    case 6 : return {id: "cartegory-minecraft",name :""}
-    case 7 : return {id: "cartegory-omori",name :""}
+    case 0:return {id: "cartegory-lofi",name :"Lofi"}
+    case 1 : return {id: "cartegory-lofi-vibes",name :"lofi Vibes"}
+    case 2 : return {id: "cartegory-undertale",name :""}
+    case 3 : return {id: "cartegory-minecraft",name :""}
+    case 4 : return {id: "cartegory-omori",name :""}
         }
 }
 )
@@ -165,7 +162,7 @@ return <div className="">
 
  
 {/*Musicas*/}
-<div className=" w-full flex flex-col max-h-[440px] overflow-scroll pt-2">
+<div className=" w-full flex flex-col max-h-[440px] gap-3 overflow-scroll pt-2 mb-2">
 {Obj.map((obj)=>{
 return <div className='px-4 '> 
 <div className={'flex flex-row justify-between   h-12 rounded-3xl bg-[#7676FF] bg-opacity-30 text-white text-md font-medium items-center justify-between border-[2px] border-[#bbbbbb3f] gap-8'}>

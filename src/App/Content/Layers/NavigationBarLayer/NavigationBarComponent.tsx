@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import * as Icon from "./Icons/IconsComponent"
 import { Expand } from "lucide-react";
+import bgcontroller from "../../Cases & Controlers/BG/Controler/BGController";
 function NavigationBarLayout(){
   
   useEffect(()=>{
     NavBar();
+    bgcontroller.Set.Image("https://res.cloudinary.com/dtochimsz/image/upload/v1706201939/feitos/Design_sem_nome_upscayl_4x_realesrgan-x4plus-anime_upscayl_2x_realesrgan-x4plus-anime_uk4lw4.jpg")
   },[])
     return (
         

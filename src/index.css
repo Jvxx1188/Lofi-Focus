@@ -71,12 +71,9 @@
   * {
     @apply border-border;
   }
-  body {
-    background: black url(https://res.cloudinary.com/dtochimsz/image/upload/v1705157503/Design_sem_nome_upscayl_4x_realesrgan-x4plus-anime_fqxnhe.jpg);
-background-size: cover;
-background-position: center;
-  }
-
+body{
+  background-color: gray;
+}
 }
 #nav-layout{
 }
@@ -195,24 +192,12 @@ Oswald 200 400 700*/
 /*Cartegories*/
 
 #cartegory-lofi{
-  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705263348/_3e779ecb-0876-4943-b679-5a56fd77f8e1_kupkqw.jpg);
-  background-size: cover; 
-
-}
-#cartegory-lofi-chill{
   background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705496919/_37b54a6b-c032-4ae8-bc0e-5f07763bb980_bdwkjl.jpg);
   background-size: cover; 
 }
 
 #cartegory-lofi-vibes{
-  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_c95587fc-4241-4561-b028-76d86c60d6f5_c2bojl.jpg) center;
-  background-size: cover;
-}#cartegory-lofi-jazz{
-background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_b3e8bd3f-1d63-4a9c-9f68-d59f78417b2c_qgevmj.jpg) center;
-background-size: cover;
-}
-#cartegory-lofi-sleep{
-  background: url(https://res.cloudinary.com/dtochimsz/image/upload/v1705260014/_aa77f22e-a8e0-4902-a131-c63a119c734d_eukhmk.jpg) center;
+  background: url(https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_400/v1706201942/feitos/Design_sem_nome_2__upscayl_4x_realesrgan-x4plus-anime_upscayl_2x_realesrgan-x4plus-anime_v8t1p5.jpg) center;
   background-size: cover;
 }#cartegory-undertale{
   background: url(https://upload.wikimedia.org/wikipedia/commons/2/26/Undertale-logo.jpg) center black;
