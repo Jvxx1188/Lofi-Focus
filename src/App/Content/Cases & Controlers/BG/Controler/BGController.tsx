@@ -10,7 +10,7 @@ class BGController {
    Set = {
     Video : (videoobj : VideoObj) =>{
       const videoid =  musiccontroller.extractYouTubeVideoId(videoobj.url);
-       let extra;
+      
         
        //radio DO VIDEO
             //com window eu consigo saber se meu monitor está na vertical ou horizontal
@@ -45,7 +45,7 @@ class BGController {
                     disablekb : 1,
                     showinfo : 0,
                     controls : 0,
-                    loop : 1,
+                    loop : 0,
                     iv_load_policy : 3,
                     playlist: videoid,
                     
@@ -53,6 +53,15 @@ class BGController {
            ,events: {
             onReady: (event) => {
                 event.target.mute();
+            },
+
+            onStateChange(event) {
+                if (event.data === YT.PlayerState.ENDED) {
+                        event.target.playVideo();
+                }
+
+                  
+               
             }
             }
         });

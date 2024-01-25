@@ -163,7 +163,7 @@ function SlideTime(){
 
 return <div className="flex flex-row gap-2 w-24">
 <p>{musiccontroller.Get.VideoDuration()}</p>
-<Slider defaultValue={[currenttime]} max={maxduration}  step={1} onValueCommit={(value) => {musiccontroller.Youtube.seekTo(value[0], true);}} />
+<Slider defaultValue={[currenttime]} max={maxduration}  step={1} onValueCommit={(value) => {musiccontroller.Youtube.p;}} />
 </div>
 }
 function ButtonMix(Icon : LucideIcon,call : () => void)
