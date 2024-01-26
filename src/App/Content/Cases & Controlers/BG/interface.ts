@@ -3,4 +3,5 @@ export interface VideoObj {
     radio : Array<number>,
     author? : string
     ImageUrl : string
+    type : string
 }

@@ -8,6 +8,52 @@ class BGController {
     
     }
    Set = {
+    wistia : (videoobj : VideoObj) =>{
+        console.log("wistia")
+        console.log("wistia");
+
+        const div = document.getElementById("bg-layer-container");
+        if (!div) return;
+        const root = ReactDOM.createRoot(div);
+
+
+        let proporção;
+            
+        //horizontal ou lateral
+        
+        console.log(window.innerWidth / window.innerHeight , videoobj.radio[0] / videoobj.radio[1])
+            
+        if(window.innerWidth / window.innerHeight < videoobj.radio[0] / videoobj.radio[1]){
+            proporção = "h-full";} else{ proporção = "w-full";}
+
+    const radio =' aspect-'+videoobj.radio[0]+"-"+videoobj.radio[1]+' ' ;
+    //essa é a caixa do iframe
+        
+    div.className = proporção+ radio +" flex items-center justify-center";
+
+        root.render(
+            <iframe className="w-full h-full aspect-video"
+                src={`https://fast.wistia.net/embed/iframe/${videoobj.url}?version=v1&autoPlay=true`}
+                frameBorder="0"
+                scrolling="no"
+                name="wistia_embed"
+                allowFullScreen></iframe>
+        );
+
+        window._wq = window._wq || [];
+        
+        _wq.push({ id: videoobj.url, onReady: function(video) {
+            console.log("I got a handle to the video!", video);
+            video.play();
+           
+            video.bind('end', function() {
+                console.log('play')
+                video.play()
+                
+                // Faça algo após o término do vídeo
+              });
+          }});
+    },
     Video : (videoobj : VideoObj) =>{
       const videoid =  musiccontroller.extractYouTubeVideoId(videoobj.url);
       
@@ -51,9 +97,6 @@ class BGController {
                     
                  }
            ,events: {
-            onReady: (event) => {
-                event.target.mute();
-            },
 
             onStateChange(event) {
                 if (event.data === YT.PlayerState.ENDED) {

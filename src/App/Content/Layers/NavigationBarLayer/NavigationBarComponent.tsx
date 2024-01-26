@@ -30,7 +30,7 @@ function NavigationBarLayout(){
         {Icon.Clock}
         {Icon.Music}
         {Icon.Bg}
-
+        {Icon.Discord}
         </div>
 
                 

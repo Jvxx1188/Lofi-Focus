@@ -28,8 +28,8 @@ export default function VideoCase(){
             <div className="grid coluna gap-4">
             {
             cartegory.values.map((video)=>{
-               return <div className="rounded-xl hover:outline duration-100 hover:cursor-pointer hover:outline-white overflow-hidden active:outline-6 active:outline-black active:duration-0" onClick={()=>bgcontroller.Set.Video(video)}>
-                <img className="aspect-video" src={video.ImageUrl} alt="" />
+            return <div className="rounded-xl hover:outline duration-100 hover:cursor-pointer hover:outline-white overflow-hidden active:outline-6 active:outline-black active:duration-0" onClick={()=>{return video.type =="youtube"? bgcontroller.Set.Video(video) : bgcontroller.Set.wistia(video)}}>
+                <img className="aspect-video object-cover" src={video.ImageUrl} alt="" />
                 </div>
             })
             }

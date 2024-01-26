@@ -81,14 +81,11 @@ public Start = (Case)=>{
      <div className=" h-full bg-[#7676FF] bg-opacity-20 pt-2 rounded-3xl px-2 overflow-y-scroll overflow-x-hidden">
      {this.CartegoryBox()}
      </div>
-        
-
-       
             </div>
            
  
 
-       
+       <p className="text-muted-foreground px-4 text-center">Videos are indexed with Youtube ID video and transmitted via an iframe, any copyright issues contact : jvxx1188@gmail.com</p>
     </div>
 }
 
@@ -109,10 +106,9 @@ CartegoryBox = () =>{
 const cartegory = (()=>{
     switch(i){
     case 0:return {id: "cartegory-lofi",name :"Lofi"}
-    case 1 : return {id: "cartegory-lofi-vibes",name :"lofi Vibes"}
-    case 2 : return {id: "cartegory-undertale",name :""}
-    case 3 : return {id: "cartegory-minecraft",name :""}
-    case 4 : return {id: "cartegory-omori",name :""}
+    case 1 : return {id: "cartegory-undertale",name :""}
+    case 2 : return {id: "cartegory-minecraft",name :""}
+    case 3 : return {id: "cartegory-omori",name :""}
         }
 }
 )
@@ -203,7 +199,11 @@ return <div className='px-4 '>
     </div> 
     <p className="text-xs from-accent-foreground">Random Mix of the Cartegory</p>
     </div>
+
+
 </div>
+
+        
 
     </div>
    

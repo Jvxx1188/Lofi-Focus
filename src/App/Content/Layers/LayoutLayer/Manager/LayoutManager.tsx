@@ -2,6 +2,7 @@ import React from "react";
 import BGLayoutComponent from "../../../Cases & Controlers/BG/CaseLayout/BGCaseLayoutComponent";
 import ClockCaseLayout from "../../../Cases & Controlers/Clock/CaseLayout/ClockCaseLayoutComponent";
 import MusicCaseLayout from "../../../Cases & Controlers/Music/CaseLayout/MusicCaseLayoutComponent";
+import DiscordCaseLayout from "../../../Cases & Controlers/Discord/DiscordCase";
     
 
 
@@ -20,6 +21,9 @@ import MusicCaseLayout from "../../../Cases & Controlers/Music/CaseLayout/MusicC
             break;
         case "icon-bg":
             return <BGLayoutComponent/>
+        break;
+        case "icon-discord":
+            return <DiscordCaseLayout/>
         break;
             default:
             return <div></div>

@@ -6,24 +6,69 @@ export const Videos : Array<videos> = [
         'values': [
             {
                 url : "https://www.youtube.com/watch?v=BFhp7Y0iLSA",
-                ImageUrl : "https://i.ytimg.com/an_webp/BFhp7Y0iLSA/mqdefault_6s.webp?du=3000&sqp=CIC2ta0G&rs=AOn4CLDwVxAS1WLzl9idPKuLpJD_W992Mw",
-                radio : [16,9]
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/v1706213068/Screenshot_from_2024-01-25_17-01-47_bhhlxd.png",
+                radio : [16,9],
+                type : "youtube",
+                author : 'Abstract Motion' 
             },
-            {//the drive
-                url : "https://www.youtube.com/watch?v=lrf-GAYUOkQ",
-                ImageUrl : "https://i.ytimg.com/vi/rqJDO3TWnac/maxresdefault.jpg",
-                radio : [16,9]
-            },
-            
-        ]
-    },
-    {
-        'tittle' : "Ambients",
-        'values': [
             {
-                url : "https://www.youtube.com/watch?v=XqIYOAoOAes",
-                ImageUrl : "https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA",
-                radio : [16,9]
+                url : "wrsun6n6zx",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_400/v1706295877/Screenshot_from_2024-01-26_16-03-19_ww1yx1.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+            {
+                url : "lavbmsvjjk",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_400/v1706295877/Screenshot_from_2024-01-26_16-03-30_jp4t4x.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+
+            {
+                url : "zg4xpgh3rm",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_400/v1706295876/Screenshot_from_2024-01-26_16-03-42_lkkmx7.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+            {
+                url : "c05d3w0zg0",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_424/v1706296323/Screenshot_from_2024-01-26_16-11-39_ls3a1l.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+            {
+                url : "631lk0ifqb",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_368/v1706295877/Screenshot_from_2024-01-26_16-04-07_ze5hgq.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+
+            {
+                url : "rg6ovs4g8u",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_368/v1706295877/Screenshot_from_2024-01-26_16-04-01_qoqzb9.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+
+            {
+                url : "fpy4hbv9fm",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_339/v1706295876/Screenshot_from_2024-01-26_16-03-55_i6el1j.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
+            },
+            {
+                url : "8wvsbko4w0",
+                ImageUrl : "https://res.cloudinary.com/dtochimsz/image/upload/c_scale,w_431/v1706295877/Screenshot_from_2024-01-26_16-03-50_u7c71q.png",
+                radio : [16,9],
+                type : "cloud",
+                author : 'tunnelmotions'
             },
             
         ]

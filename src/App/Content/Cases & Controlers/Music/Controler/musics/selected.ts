@@ -3,46 +3,15 @@ export const cartegories = [
  
 //lofi chill
 [
-    {name : "Chillhop Radio - jazzy & lofi hip hop beats 🐾",
-        url : "https://www.youtube.com/watch?v=5yx6BWlEVcY",
-        type : "live",authorname : "Chillhop Music"},
-        
-        {name : "lofi hip hop radio 📚 - beats to relax/study to",
+        {name : "Lofi Girl LIVE",
         url : "https://www.youtube.com/watch?v=jfKfPfyJRdk",
         type : "live",authorname : "lofigirl"},
-    {name : "BlockBuster 🎥 No Copyright Lofi Hip Hop & Chillhop Mix 2022 | Chill lofi beats to study / relax to",
+    {name : "Stomp's Playlist | No Copyright Lofi Hip Hop & Chillhop Mix 2022",
     url : "https://www.youtube.com/watch?v=BEXL80LS0-I",
     type : "playlist",authorname : "Stomp's Playlist"},
-],
-//vibes
-[
-    
-    {name : "Aesthetic",
-    url : "https://www.youtube.com/watch?v=qELmC7r0RKg",
-    type : "music",authorname : "Tollam Kim"},
-    {name : "Kylie Vibes",
-    url : "https://www.youtube.com/watch?v=7ru0pMwmuWY",
-    type : "music",authorname : "Tollam Kim"},
-    {name : "Sweet Sunset",
-    url : "https://www.youtube.com/watch?v=7XdhxXSzPHU",
-    type : "music",authorname : "Tollan Kim & dulai"},
-    {name : "Clouds",
-    url : "https://www.youtube.com/watch?v=TFeazBaTYVc",
-    type : "music",authorname : "Tollam Kim"},
-    {name : "Kylie Vibes",
-    url : "https://www.youtube.com/watch?v=7XdhxXSzPHU",
-    type : "music",authorname : "Tollam Kim"},
-    {name : "Hurt - New Jeans (Lofi Remix)",
-    url : "https://www.youtube.com/watch?v=6I2pyW6dmsE",
-    type : "music",authorname : "Tollam Kim"},
-    {name : "And So It Begins [Lo-fi]",
+    {name : "BreakingCopyright | And So It Begins [Lo-fi]",
     url : "https://youtu.be/BH-SnQ8J1VU?si=ropXNpyTN978V9NC",
     type : "music",authorname : "BreakingCopyright"},
-    
-    {name : "You inspire me ◍ lofi ◍ music for stress relief",
-    url : "https://www.youtube.com/watch?v=gRmxPMQzPKc",
-    type : "playlist",authorname : "Dreamy"}
-    
 ],
 //undertale
 [

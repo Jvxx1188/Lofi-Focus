@@ -10,22 +10,31 @@
 
 //aqui
 
-export function IconBase(Id : string,Icon : LucideIcon){
+export function IconBase (Id : string,Icon? : LucideIcon | null,imgurl? : string){
    const myId = "icon-"+Id;
 
 //ele tenq esperar o embaixo carregar primeiro pra depois chamar,entao eu acho que a melhor solução é um await pra aguardar já que o effect está certinho tlgd
 
-    
-    
-   return (
-        <div id={myId}  className="nav-icon-container w-10 h-10 
+    console.log(imgurl)
+ return Icon ?  (
+    <div id={myId}  className="nav-icon-container w-10 h-10 
          border border-white 
         border-opacity-70 rounded-full bg-white  hover:p-1 hover:cursor-pointer">
             <div className="w-full h-full rounded-full flex items-center justify-center">
             <Icon color="white" className="rounded-full w-[75%]"/>
             </div>
         </div>
-    );
+) : (
+    <div id={myId}  className="nav-icon-container w-10 h-10 
+         border border-white 
+        border-opacity-70 rounded-full bg-white  hover:p-1 hover:cursor-pointer">
+            <div className="w-full h-full rounded-full flex items-center justify-center">
+            <img className="p-2 select-none" src={imgurl} alt="" />
+            </div>
+        </div>
+) 
+   
+   
     }
 
 
@@ -35,7 +44,7 @@ export function IconBase(Id : string,Icon : LucideIcon){
     export const Clock=IconBase("clock",Clock4) as React.JSX.Element;
     export const Music =IconBase("music",Music2) as React.JSX.Element;
     export const Bg = IconBase("bg",WallpaperIcon) as React.JSX.Element;
-
+    export const Discord = IconBase("discord",null, 'https://www.svgrepo.com/show/353655/discord-icon.svg') as React.JSX.Element;
 
     export function ValidateIconClicks(state :string,setstate :Dispatch<React.SetStateAction<string>>){
         const MyIcon = Array.from(document.getElementsByClassName("nav-icon-container"));
