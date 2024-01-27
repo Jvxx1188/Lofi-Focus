@@ -2,6 +2,12 @@ import { VideoObj } from "../interface";
 import { musiccontroller } from "../../Music/Controler/MusicControler";
 import ReactDOM from "react-dom/client";
 import React from "react";
+declare global {
+    interface Window {
+        _wq: Array<object>;
+    }
+}
+
 class BGController {
     private youtube : YT.Player
     constructor(){
@@ -40,9 +46,8 @@ class BGController {
                 allowFullScreen></iframe>
         );
 
-        window._wq = window._wq || [];
-        
-        _wq.push({ id: videoobj.url, onReady: function(video) {
+        window._wq = [] ;
+        window._wq.push({ id: videoobj.url, onReady: function(video) {
             console.log("I got a handle to the video!", video);
             video.play();
            
