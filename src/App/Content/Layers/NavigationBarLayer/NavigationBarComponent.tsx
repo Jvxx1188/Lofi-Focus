@@ -11,7 +11,7 @@ function NavigationBarLayout(){
     return (
         
         <div id="nav-layer" className=" w-screen duration-300
-         h-screen flex justify-center items-end">
+         h-screen flex justify-center items-end ">
         <div onClick={()=>FullScreen()} className="absolute top-0 left-0 m-3 w-12 h-12 text-white
          border border-white  flex items-center justify-center
         border-opacity-70 rounded-full bg-[rgba(255, 255, 255, 0.095)] duration-200 hover:p-3 hover:cursor-pointer hover:bg-[#0000003d] active:bg-white active:duration-0">
@@ -50,18 +50,26 @@ function FullScreen(){
 }
 function NavBar(){
   let mouseTimeout: NodeJS.Timeout;
-
+  let mouseTimeout2: NodeJS.Timeout;
+ 
   const NavBar = document.getElementById("nav-layer");
   if(!NavBar) return
 
   const EsconderNavBar = () =>{
     clearTimeout(mouseTimeout)
+    clearTimeout(mouseTimeout2)
     console.log("aparecendo")
     NavBar.classList.remove("opacity-0")
-
+    NavBar.classList.remove("hidden")
    mouseTimeout = setTimeout(() => {
       console.log("escondendo")
       NavBar.classList.add("opacity-0")
+     
+     mouseTimeout2 = setTimeout(() => {
+        console.log("escondendo")
+        NavBar.classList.add("hidden")
+    
+      }, 300);
     }, 2000);
   }
 
