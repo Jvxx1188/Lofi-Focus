@@ -10,7 +10,7 @@ function NavigationBarLayout(){
   },[])
     return (
         
-        <div id="nav-layer" className="w-screen duration-300
+        <div id="nav-layer" className=" w-screen duration-300
          h-screen flex justify-center items-end">
         <div onClick={()=>FullScreen()} className="absolute top-0 left-0 m-3 w-12 h-12 text-white
          border border-white  flex items-center justify-center
