@@ -6,7 +6,7 @@ function NavigationBarLayout(){
   
   useEffect(()=>{
     NavBar();
-    bgcontroller.Set.Image("https://res.cloudinary.com/dtochimsz/image/upload/v1706201939/feitos/Design_sem_nome_upscayl_4x_realesrgan-x4plus-anime_upscayl_2x_realesrgan-x4plus-anime_uk4lw4.jpg")
+    bgcontroller.Set.Image("https://res.cloudinary.com/dtochimsz/image/upload/v1706201964/feitos/Design_sem_nome_4__upscayl_4x_realesrgan-x4plus-anime_upscayl_2x_realesrgan-x4plus-anime_sffhqm.jpg")
   },[])
     return (
         
@@ -30,7 +30,6 @@ function NavigationBarLayout(){
         {Icon.Clock}
         {Icon.Music}
         {Icon.Bg}
-        {Icon.Discord}
         </div>
 
                 
@@ -59,8 +58,8 @@ function NavBar(){
     clearTimeout(mouseTimeout)
     clearTimeout(mouseTimeout2)
     console.log("aparecendo")
-    NavBar.classList.remove("opacity-0")
     NavBar.classList.remove("hidden")
+    NavBar.classList.remove("opacity-0")
    mouseTimeout = setTimeout(() => {
       console.log("escondendo")
       NavBar.classList.add("opacity-0")

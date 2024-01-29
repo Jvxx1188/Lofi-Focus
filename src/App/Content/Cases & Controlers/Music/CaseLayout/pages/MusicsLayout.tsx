@@ -216,7 +216,7 @@ return <div className='px-4 '>
 
 
     CustomLayout = () =>{
-        return <button onClick={()=>this.Render("layout")}>
+        return <button className="max-h-20 p-3 bg-[#00000067] rounded-lg flex items-center flex-center" onClick={()=>this.Render("layout")}>
             Working | Click to back
         </button>
     }
