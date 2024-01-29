@@ -2,15 +2,15 @@
 
 
 ## funções 
- •player de musica
+ • Player de musica
 
- •relógio
+ • Relógio
  
- •videos de fundo
+ • Videos de fundo
  
- •background para monitor 
+ • Background para monitor 
  
- •videos responsiveis a tela (no start)
+ • Videos responsiveis a tela (no start)
  
 .
 .
