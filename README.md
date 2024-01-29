@@ -1,3 +1,3 @@
 # Focus
 
-https://lofifocus.site
+http://lofifocus.site
