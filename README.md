@@ -24,5 +24,8 @@ muita coisa teve de ser removida por conta de direitos autorais, infelizmente
  
  •musicas e videos customizados com salvamento dos dados em localstorage
 
-  
+    
 https://www.lofifocus.site/
+
+![image](./screenshots/Screenshot from 2024-02-08 16-32-22.png)
+
