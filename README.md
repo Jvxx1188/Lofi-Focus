@@ -27,5 +27,7 @@ muita coisa teve de ser removida por conta de direitos autorais, infelizmente
     
 https://www.lofifocus.site/
 
-![image](./screenshots/Screenshot from 2024-02-08 16-32-22.png)
+![image](./screenshots/img1.png)
+![image](./screenshots/img2.png)
+![image](./screenshots/img3.png)
 

@@ -59,7 +59,9 @@ function NavBar(){
     clearTimeout(mouseTimeout2)
     console.log("aparecendo")
     NavBar.classList.remove("hidden")
+setTimeout(() => {
     NavBar.classList.remove("opacity-0")
+},10)
    mouseTimeout = setTimeout(() => {
       console.log("escondendo")
       NavBar.classList.add("opacity-0")
