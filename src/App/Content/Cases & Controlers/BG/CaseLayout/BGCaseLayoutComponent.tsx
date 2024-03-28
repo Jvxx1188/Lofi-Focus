@@ -9,46 +9,46 @@ import SettingsCase from "./pages/SettingsCase";
 import ReactDOM from "react-dom/client";
 //pensar em como vai ser a case para o imagem e video, meio que vai ter imagem e video e dentro do script da imagem e do video vao ter as cases dele de pre-configurado e custom que dependendo deles vao retornar uma aba especifica
 
-function BGLayoutComponent(){
-   
-    return <div className="flex flex-col">
-<div id="bg-layout-container" className="w-full h-full flex justify-end">
-        {bgmanager.BGLayoutManager(bgmanager.id)}
+function BGLayoutComponent() {
 
+    return <div className="flex flex-col">
+        <div id="bg-layout-container" className="w-full h-full flex justify-end">
+            {bgmanager.BGLayoutManager(bgmanager.id)}
+
+        </div>
+        <div className="h-20 w-10">
+        </div>
     </div>
-    <div className="h-20 w-10">
-            </div>
-    </div> 
 }
 
 
-class BGManager{
+class BGManager {
     public id = 1;
-    constructor (){
+    constructor() {
 
     }
-    Render = (newid : number)=>{
-    this.id = newid;
+    Render = (newid: number) => {
+        this.id = newid;
         //encontra a box e renderiza o item do id
-        
+
         const root = document.getElementById("bg-layout-container");
-        if(!root) return;
+        if (!root) return;
         const root2 = ReactDOM.createRoot(root);
         root2.render(
             this.BGLayoutManager(this.id)
-            
+
         )
 
 
-        
+
     }
 
-    BGLayoutManager =(id)=>{
-        switch(id){
-            case 0 : return <ImageCase/>
-            case 1 : return <VideoCase/>
-            case 2 : return <CustomCase/>
-            case 3 : return <SettingsCase/>
+    BGLayoutManager = (id) => {
+        switch (id) {
+            case 0: return <ImageCase />
+            case 1: return <VideoCase />
+            case 2: return <CustomCase />
+            case 3: return <SettingsCase />
         }
     }
 }
