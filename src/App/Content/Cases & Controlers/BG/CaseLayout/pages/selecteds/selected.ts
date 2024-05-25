@@ -14,6 +14,21 @@ export const Videos: Array<videos> = [
                 author: ''
             },
             {
+                url: "https://youtu.be/e8PigCiFnvk?si=ipvxtGHRGfMd6KcI"
+                ,
+                ImageUrl: "https://res.cloudinary.com/dtochimsz/image/upload/v1711661908/mqdefault_6s_qvx1z8.webp",
+                radio: [16, 9],
+                type: "youtube",
+                author: ''
+            },
+            {
+                url: "https://www.youtube.com/watch?v=6I2pyW6dmsE"
+                ,
+                ImageUrl: "https://res.cloudinary.com/dtochimsz/image/upload/v1711661908/mqdefault_6s_qvx1z8.webp",
+                radio: [16, 9],
+                type: "youtube",
+                author: ''
+            }, {
                 url: "https://www.youtube.com/watch?v=877xvzpyeeo",
                 ImageUrl: "https://res.cloudinary.com/dtochimsz/image/upload/v1711662036/mqdefault_6s_jrpsph.webp",
                 radio: [16, 9],
